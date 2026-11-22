@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musaq Traders | Women's Wear Hyderabad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+        /* Top Dark Header */
+        .top-header {
+            background-color: #1c1917;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .brand-logo {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #c59b6d;
+            background-color: #000000;
+        }
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #c59b6d;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .brand-subtitle {
+            font-size: 0.8rem;
+            color: #d6c7b8;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .search-box {
+            background: #2b2623;
+            border: 1px solid #443c37;
+            border-radius: 25px;
+            padding: 7px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 0.85rem;
+            width: 150px;
+        }
+        .search-box i {
+            color: #c59b6d;
+            font-size: 0.9rem;
+        }
+
+        /* White Navigation Bar */
+        nav {
+            background-color: #ffffff;
+            padding: 12px 6%;
+            border-bottom: 1px solid #eaeaea;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            text-decoration: none;
+            color: #222222;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #b5895a;
+        }
+
+        /* Hero Banner with Watermark Logo */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(28, 25, 23, 0.45), rgba(28, 25, 23, 0.55)),
+                        url('https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 8%;
+            overflow: hidden;
+        }
+        .hero-text {
+            max-width: 550px;
+            color: #ffffff;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .hero-text p {
+            font-size: 1rem;
+            margin-bottom: 22px;
+            color: #f3ede7;
+        }
+        /* Translucent Watermark Logo on Right Side of Hero */
+        .hero-watermark {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            opacity: 0.32;
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Explore Section Bar */
+        .explore-strip {
+            background-color: #ffffff;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .explore-btn {
+            background-color: #c59b6d;
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .explore-btn:hover {
+            background-color: #a87f52;
+        }
+
+        /* Product Categories Section */
+        .section {
+            padding: 60px 6%;
+            max-width: 1250px;
+            margin: auto;
+        }
+        .section-heading {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1c1917;
+            margin-bottom: 10px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 28px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #ece6df;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .card img {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 18px;
+        }
+        .card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1c1917;
+            margin-bottom: 6px;
+        }
+        .card-body p {
+            font-size: 0.88rem;
+            color: #666666;
+        }
+
+        /* Dark Footer matching design */
+        footer {
+            background-color: #1c1917;
+            color: #e5ded7;
+            padding: 50px 6% 25px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #332e2a;
+        }
+        .footer-col h4 {
+            font-size: 1.1rem;
+            color: #c59b6d;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 0.9rem;
+            color: #d6cfc7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer-col a:hover {
+            color: #c59b6d;
+        }
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #2b2623;
+            color: #c59b6d;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            border: 1px solid #443c37;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            background: #c59b6d;
+            color: #1c1917;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #9e958d;
+        }
+
+        @media (max-width: 768px) {
+            .brand-title { font-size: 1.5rem; }
+            .hero { flex-direction: column; text-align: center; }
+            .hero-watermark { width: 160px; height: 160px; margin-top: 20px; }
+            .explore-strip { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Dark Header -->
+    <header class="top-header">
+        <div
+          
