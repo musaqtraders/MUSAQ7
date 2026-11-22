@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUSAQ | Kurtas Collection</title>
+    <title>MUSAQ | Kurtas</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,30 +15,31 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ebe6df;
-            color: #2b2420;
+            background-color: #23201e;
+            color: #ffffff;
             line-height: 1.5;
         }
 
         .page-wrap {
             max-width: 540px;
             margin: 0 auto;
-            background: #e8e2da;
+            background-color: #23201e;
             min-height: 100vh;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* Top Dark Brand Hero */
+        /* Top Dark Brand Section */
         .hero-dark {
             background-color: #23201e;
-            color: #ffffff;
             text-align: center;
-            padding: 44px 24px 36px;
+            padding: 46px 22px 44px;
         }
 
         .hero-logo {
-            width: 110px;
-            height: 110px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             margin: 0 auto 12px;
             display: block;
@@ -46,7 +47,7 @@
 
         .brand-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             letter-spacing: 5px;
             font-weight: 600;
             text-transform: uppercase;
@@ -54,134 +55,50 @@
         }
 
         .brand-sub {
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: #cfc5ba;
-            margin-bottom: 28px;
+            color: #d6ccc2;
+            margin-bottom: 32px;
         }
 
-        .kurti-showcase {
+        /* Kurti Photo Card */
+        .kurti-card {
             width: 100%;
-            max-width: 340px;
+            max-width: 400px;
             margin: 0 auto;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            background: #181513;
+            background: #2b2623;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .kurti-showcase img {
+        .kurti-card img {
             width: 100%;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
+            height: auto;
             display: block;
         }
 
-        .kurti-caption {
-            padding: 14px;
+        .kurti-details {
+            padding: 16px;
             text-align: center;
             background: #2b2623;
         }
 
-        .kurti-caption h3 {
+        .kurti-details h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 600;
             margin-bottom: 4px;
         }
 
-        .kurti-caption p {
-            font-size: 0.85rem;
-            color: #dfd5ca;
-        }
-
-        /* Stay Updated Form Section (Beige/Cream like screenshot) */
-        .signup-section {
-            background-color: #e8e2da;
-            padding: 48px 28px;
-            text-align: center;
-        }
-
-        .signup-section h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            line-height: 1.15;
-            color: #3a322d;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .signup-section .lead {
+        .kurti-details p {
             font-size: 0.9rem;
-            color: #5c524b;
-            max-width: 320px;
-            margin: 0 auto 24px;
-        }
-
-        .divider-line {
-            width: 180px;
-            height: 1.5px;
-            background: #4a3f38;
-            margin: 0 auto 26px;
-        }
-
-        .form-box {
-            max-width: 380px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .form-box input,
-        .form-box textarea {
-            width: 100%;
-            background: #ffffff;
-            border: 1px solid #d5cdc2;
-            padding: 13px 15px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.9rem;
-            color: #2b2420;
-            outline: none;
-        }
-
-        .form-box input::placeholder,
-        .form-box textarea::placeholder {
-            color: #9a9086;
-        }
-
-        .form-box textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #e6dfd5;
-            border: 1.5px solid #4a3f38;
-            color: #3a322d;
-            padding: 14px 20px;
-            font-size: 0.92rem;
+            color: #e6dcd2;
             font-weight: 500;
-            cursor: pointer;
-            margin-top: 6px;
-            transition: all 0.25s;
         }
 
-        .submit-btn:hover {
-            background: #3a322d;
-            color: #ffffff;
-        }
-
-        .form-note {
-            font-size: 0.72rem;
-            color: #6b6159;
-            margin-top: 8px;
-        }
-
-        /* Brown Footer with Big Clean Social Icons */
+        /* Brown Footer with Social Icons */
         .footer-brown {
             background-color: #695349;
             color: #f5efe8;
@@ -219,39 +136,22 @@
 
     <div class="page-wrap">
 
-        <!-- Dark Top Section with MUSAQ Logo & Kurti -->
+        <!-- Dark Top Section with Large MUSAQ Logo & Your Kurti -->
         <section class="hero-dark">
             <img src="5956-removebg-preview.png" alt="MUSAQ Logo" class="hero-logo" onerror="this.style.display='none'">
             <div class="brand-title">MUSAQ</div>
             <div class="brand-sub">Kurtas • Wholesale & Retail</div>
 
-            <div class="kurti-showcase">
-                <img src="kurti1.jpg" alt="MUSAQ Kurti Set" onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85'">
-                <div class="kurti-caption">
+            <div class="kurti-card">
+                <img src="IMG-20261122-WA0001.jpg" alt="MUSAQ Mauve Kurti Set">
+                <div class="kurti-details">
                     <h3>Mauve Scallop Kurti Set</h3>
                     <p>Size: XL, XXL • Wholesale Rate: ₹440</p>
                 </div>
             </div>
         </section>
 
-        <!-- Stay Updated / Order Inquiry Section -->
-        <section class="signup-section">
-            <h2>STAY<br>UPDATED</h2>
-            <p class="lead">Sign up and be the first to know when new kurtas arrive.</p>
-            <div class="divider-line"></div>
-
-            <form class="form-box" onsubmit="sendOrderMail(event)">
-                <input type="text" id="firstName" placeholder="First name*" required>
-                <input type="text" id="lastName" placeholder="Last name*" required>
-                <input type="email" id="email" placeholder="Email address*" required>
-                <input type="tel" id="phone" placeholder="Phone number*" required>
-                <textarea id="message" placeholder="Message* (e.g. Kurti name, Size XL/XXL, Qty)" required></textarea>
-                <button type="submit" class="submit-btn">Sign Up</button>
-                <p class="form-note">Direct inquiry sent to musaqtraders@gmail.com</p>
-            </form>
-        </section>
-
-        <!-- Brown Footer with Facebook, Instagram & Gmail Icons -->
+        <!-- Brown Footer with Facebook, Instagram & Gmail -->
         <footer class="footer-brown">
             <p>© 2026 Musaq Traders. All Rights Reserved.</p>
             <div class="social-icons">
@@ -263,24 +163,5 @@
 
     </div>
 
-    <script>
-        function sendOrderMail(e) {
-            e.preventDefault();
-            const fn = document.getElementById('firstName').value;
-            const ln = document.getElementById('lastName').value;
-            const em = document.getElementById('email').value;
-            const ph = document.getElementById('phone').value;
-            const msg = document.getElementById('message').value;
-
-            const subject = encodeURIComponent(`MUSAQ Inquiry - ${fn} ${ln}`);
-            const body = encodeURIComponent(
-                `Name: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph}\n\nMessage:\n${msg}`
-            );
-
-            window.location.href = `mailto:musaqtraders@gmail.com?subject=${subject}&body=${body}`;
-        }
-    </script>
-
 </body>
-    </html>
-    
+</html>
