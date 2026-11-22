@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musaq Traders | Women's Wear Hyderabad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Musaq Traders | Kurtas & Kurti Sets Hyderabad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,385 +14,431 @@
         }
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
-            color: #222222;
+            background-color: #faf7f5;
+            color: #1f1b18;
             line-height: 1.6;
         }
 
-        /* Top Dark Header */
-        .top-header {
-            background-color: #1c1917;
-            padding: 15px 6%;
+        /* Luxury Header */
+        header {
+            background: linear-gradient(135deg, #14110f 0%, #241c17 100%);
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-        }
-        .brand-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .brand-logo {
-            width: 68px;
-            height: 68px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #c59b6d;
-            background-color: #000000;
-        }
-        .brand-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #c59b6d;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-        .brand-subtitle {
-            font-size: 0.8rem;
-            color: #d6c7b8;
-        }
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .search-box {
-            background: #2b2623;
-            border: 1px solid #443c37;
-            border-radius: 25px;
-            padding: 7px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .search-box input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            font-size: 0.85rem;
-            width: 150px;
-        }
-        .search-box i {
-            color: #c59b6d;
-            font-size: 0.9rem;
-        }
-
-        /* White Navigation Bar */
-        nav {
-            background-color: #ffffff;
-            padding: 12px 6%;
-            border-bottom: 1px solid #eaeaea;
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            flex-wrap: wrap;
+            border-bottom: 1px solid #c59b6d;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        nav a {
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-frame {
+            background: #0d0b0a;
+            padding: 6px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 155, 109, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-frame img {
+            height: 54px;
+            width: auto;
+            max-width: 90px;
+            object-fit: contain;
+            display: block;
+        }
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #e2bc8d;
+            line-height: 1.05;
+        }
+        .brand-tag {
+            font-size: 0.78rem;
+            color: #e6dcd2;
+            letter-spacing: 0.4px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #f5efe9;
             text-decoration: none;
-            color: #222222;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 400;
             transition: color 0.3s;
         }
-        nav a:hover {
-            color: #b5895a;
+        .nav-links a:hover {
+            color: #e2bc8d;
         }
 
-        /* Hero Banner with Watermark Logo */
+        /* Hero Banner */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(28, 25, 23, 0.45), rgba(28, 25, 23, 0.55)),
+            min-height: 460px;
+            background: linear-gradient(90deg, rgba(20,17,15,0.88) 0%, rgba(20,17,15,0.62) 60%, rgba(20,17,15,0.45) 100%),
                         url('https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-            min-height: 440px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 50px 8%;
+            padding: 60px 6%;
             overflow: hidden;
         }
-        .hero-text {
-            max-width: 550px;
+        .hero-content {
+            max-width: 600px;
             color: #ffffff;
             z-index: 2;
         }
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
-            margin-bottom: 12px;
-            line-height: 1.2;
+        .badge {
+            display: inline-block;
+            background: rgba(197, 155, 109, 0.2);
+            border: 1px solid #c59b6d;
+            color: #e8c599;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
         }
-        .hero-text p {
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            line-height: 1.12;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+        .hero-content p {
+            color: #ece3da;
             font-size: 1rem;
-            margin-bottom: 22px;
-            color: #f3ede7;
+            margin-bottom: 24px;
         }
-        /* Translucent Watermark Logo */
-        .hero-watermark {
-            width: 240px;
-            height: 240px;
-            object-fit: contain;
-            opacity: 0.32;
-            border-radius: 50%;
+        .btn-gold {
+            display: inline-block;
+            background: #c59b6d;
+            color: #14110f;
+            padding: 12px 26px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            background: #dbb386;
+        }
+        .watermark-box {
             z-index: 1;
+            opacity: 0.22;
             pointer-events: none;
         }
-
-        /* Explore Section Bar */
-        .explore-strip {
-            background-color: #ffffff;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .explore-btn {
-            background-color: #c59b6d;
-            color: #ffffff;
-            padding: 12px 28px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .explore-btn:hover {
-            background-color: #a87f52;
+        .watermark-box img {
+            width: 220px;
+            height: auto;
+            object-fit: contain;
         }
 
-        /* Product Categories Section */
-        .section {
-            padding: 60px 6%;
-            max-width: 1250px;
-            margin: auto;
-        }
-        .section-heading {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #1c1917;
-            margin-bottom: 10px;
-        }
-        .section-sub {
-            text-align: center;
-            color: #666666;
-            margin-bottom: 40px;
-            font-size: 0.95rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 28px;
-        }
-        .card {
+        /* Highlights Strip */
+        .highlights {
             background: #ffffff;
-            border: 1px solid #ece6df;
-            border-radius: 8px;
-            overflow: hidden;
+            border-bottom: 1px solid #ebe3da;
+            padding: 22px 6%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-        .card img {
-            width: 100%;
-            height: 310px;
-            object-fit: cover;
-        }
-        .card-body {
-            padding: 18px;
-        }
-        .card-body h3 {
-            font-family: 'Playfair Display', serif;
+        .highlight-item i {
+            color: #b58755;
             font-size: 1.3rem;
-            color: #1c1917;
             margin-bottom: 6px;
         }
-        .card-body p {
-            font-size: 0.88rem;
-            color: #666666;
+        .highlight-item h4 {
+            font-size: 0.95rem;
+            color: #1f1b18;
+        }
+        .highlight-item p {
+            font-size: 0.82rem;
+            color: #6c6259;
         }
 
-        /* Dark Footer */
+        /* Kurtas Showcase */
+        .section {
+            padding: 65px 6%;
+            max-width: 1260px;
+            margin: auto;
+        }
+        .section-top {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+        .section-top h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: #1f1b18;
+        }
+        .section-top p {
+            color: #6c6259;
+            font-size: 0.95rem;
+            max-width: 620px;
+            margin: 6px auto 0;
+        }
+        .kurti-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 26px;
+        }
+        .kurti-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eadfd3;
+            box-shadow: 0 6px 20px rgba(31, 27, 24, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .kurti-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(31, 27, 24, 0.1);
+        }
+        .kurti-card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+        }
+        .kurti-info {
+            padding: 18px;
+        }
+        .kurti-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            color: #1f1b18;
+            margin-bottom: 6px;
+        }
+        .kurti-info p {
+            font-size: 0.88rem;
+            color: #635950;
+            margin-bottom: 12px;
+        }
+        .kurti-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+            color: #8a5e2b;
+            font-weight: 600;
+            border-top: 1px solid #f2eae1;
+            padding-top: 10px;
+        }
+
+        /* Footer */
         footer {
-            background-color: #1c1917;
-            color: #e5ded7;
+            background: #14110f;
+            color: #e6dcd2;
             padding: 50px 6% 25px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         .footer-grid {
-            max-width: 1250px;
+            max-width: 1260px;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 35px;
-            padding-bottom: 35px;
-            border-bottom: 1px solid #332e2a;
+            gap: 32px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #2d2520;
         }
         .footer-col h4 {
-            font-size: 1.1rem;
-            color: #c59b6d;
-            margin-bottom: 14px;
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #e2bc8d;
+            margin-bottom: 12px;
         }
         .footer-col p, .footer-col a {
+            color: #d3c7bc;
             font-size: 0.9rem;
-            color: #d6cfc7;
             text-decoration: none;
             display: block;
             margin-bottom: 8px;
         }
         .footer-col a:hover {
-            color: #c59b6d;
+            color: #e2bc8d;
         }
-        .social-icons {
+        .social-row {
             display: flex;
             gap: 12px;
             margin-top: 14px;
         }
-        .social-icons a {
-            width: 38px;
-            height: 38px;
+        .social-row a {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: #2b2623;
-            color: #c59b6d;
+            background: #241c17;
+            border: 1px solid #c59b6d;
+            color: #e2bc8d;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
-            border: 1px solid #443c37;
-            transition: 0.3s;
         }
-        .social-icons a:hover {
+        .social-row a:hover {
             background: #c59b6d;
-            color: #1c1917;
+            color: #14110f;
         }
-        .copyright {
+        .bottom-bar {
             text-align: center;
             padding-top: 20px;
-            font-size: 0.85rem;
-            color: #9e958d;
+            font-size: 0.84rem;
+            color: #9e9185;
         }
 
         @media (max-width: 768px) {
-            .brand-title { font-size: 1.5rem; }
-            .hero { flex-direction: column; text-align: center; }
-            .hero-watermark { width: 160px; height: 160px; margin-top: 20px; }
-            .explore-strip { justify-content: center; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .watermark-box { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Dark Header -->
-    <header class="top-header">
-        <div class="brand-left">
-            <img src="5956-removebg-preview.png" alt="Musaq Traders Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/68/000000/c59b6d?text=M'">
+    <!-- Header -->
+    <header>
+        <div class="brand-box">
+            <div class="logo-frame">
+                <img src="5956-removebg-preview.png" alt="Musaq Traders Logo" onerror="this.style.display='none'">
+            </div>
             <div>
-                <div class="brand-title">Musaq Traders</div>
-                <div class="brand-subtitle">Women's Wear | Wholesale & Retail</div>
+                <div class="brand-name">Musaq Traders</div>
+                <div class="brand-tag">Exclusive Kurtas & Kurti Sets • Hyderabad</div>
             </div>
         </div>
-        <div class="header-actions">
-            <div class="search-box">
-                <input type="text" placeholder="Search collection...">
-                <i class="fas fa-search"></i>
-            </div>
+
+        <div class="nav-links">
+            <a href="#kurtas-collection">Kurtas</a>
+            <a href="#kurti-sets">Kurti Sets</a>
+            <a href="#festive-kurtas">Festive Wear</a>
+            <a href="#contact">Contact</a>
         </div>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#kurtas">Kurtas</a>
-        <a href="#sarees">Sarees</a>
-        <a href="#lehengas">Lehengas</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-
-    <!-- Hero Banner with Watermark -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-text">
-            <h1>Elegant Women's Wear Collection</h1>
-            <p>Wholesale & Retail Fashion Store — Abbas Tower, Hyderabad, Telangana, India.</p>
+        <div class="hero-content">
+            <div class="badge">Wholesale & Retail • Abbas Tower, Hyderabad</div>
+            <h1>Signature Kurtas & Designer Kurti Sets</h1>
+            <p>Handpicked everyday comfort kurtas, embroidered sets, and festive styles crafted for boutiques, resellers, and retail shoppers.</p>
+            <a href="#kurtas-collection" class="btn-gold">Browse Kurtas Collection</a>
         </div>
-        <img src="5956-removebg-preview.png" alt="Musaq Watermark" class="hero-watermark">
+        <div class="watermark-box">
+            <img src="5956-removebg-preview.png" alt="Musaq Watermark" onerror="this.style.display='none'">
+        </div>
     </section>
 
-    <!-- Explore Collections Strip -->
-    <div class="explore-strip">
-        <a href="#kurtas" class="explore-btn">Explore Collections</a>
+    <!-- Highlights -->
+    <div class="highlights">
+        <div class="highlight-item">
+            <i class="fas fa-tshirt"></i>
+            <h4>100% Kurtas Specialist</h4>
+            <p>Dedicated range of women's kurtas & sets</p>
+        </div>
+        <div class="highlight-item">
+            <i class="fas fa-boxes-stacked"></i>
+            <h4>Wholesale & Retail</h4>
+            <p>Bulk sets & single piece options available</p>
+        </div>
+        <div class="highlight-item">
+            <i class="fas fa-location-dot"></i>
+            <h4>Abbas Tower, Hyderabad</h4>
+            <p>Telangana, India • Easy store & inquiry access</p>
+        </div>
     </div>
 
-    <!-- Products Section -->
-    <section id="kurtas" class="section">
-        <h2 class="section-heading">Our Featured Collections</h2>
-        <p class="section-sub">Available for Wholesale & Retail Orders in Hyderabad & Across India</p>
-        
-        <div class="grid">
-            <div class="card" id="kurtas-card">
-                <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80" alt="Kurtas">
-                <div class="card-body">
-                    <h3>Designer Kurtas</h3>
-                    <p>Cotton, rayon, and embroidered kurtas for daily and festive wear.</p>
+    <!-- Kurtas Collection -->
+    <section id="kurtas-collection" class="section">
+        <div class="section-top">
+            <h2>Our Kurtas Collection</h2>
+            <p>Explore stylish kurtas and suit sets from Musaq Traders at Abbas Tower, Hyderabad, Telangana.</p>
+        </div>
+
+        <div class="kurti-grid">
+            <!-- Card 1: Uses your uploaded kurti photo if named kurti1.jpg -->
+            <div class="kurti-card">
+                <img src="kurti1.jpg" alt="Embroidered Kurti Set" onerror="this.src='https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=700&q=80'">
+                <div class="kurti-info">
+                    <h3>Embroidered Kurti Sets</h3>
+                    <p>Delicate neckline & sleeve embroidery with matching bottom and dupatta options.</p>
+                    <div class="kurti-meta">
+                        <span>Sizes: XL, XXL & More</span>
+                        <span>Wholesale & Retail</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" id="sarees">
-                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80" alt="Sarees">
-                <div class="card-body">
-                    <h3>Premium Sarees</h3>
-                    <p>Traditional silk, party wear, and lightweight designer sarees.</p>
+            <!-- Card 2 -->
+            <div class="kurti-card" id="kurti-sets">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80" alt="Daily & Office Kurtas">
+                <div class="kurti-info">
+                    <h3>Daily & Office Kurtas</h3>
+                    <p>Soft, breathable fabrics designed for all-day comfort and clean regular wear.</p>
+                    <div class="kurti-meta">
+                        <span>Fresh Arrivals</span>
+                        <span>Hyderabad Store</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" id="lehengas">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Lehengas">
-                <div class="card-body">
-                    <h3>Bridal & Party Lehengas</h3>
-                    <p>Exclusive wedding and festive lehenga sets at wholesale & retail prices.</p>
+            <!-- Card 3 -->
+            <div class="kurti-card" id="festive-kurtas">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80" alt="Festive & Party Kurtas">
+                <div class="kurti-info">
+                    <h3>Festive & Occasion Kurtas</h3>
+                    <p>Rich festive colors and graceful cuts ideal for gatherings and celebrations.</p>
+                    <div class="kurti-meta">
+                        <span>Bulk & Single</span>
+                        <span>DM / Email to Order</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dark Footer -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Musaq Traders</h4>
-                <p>Women's Wear | Wholesale & Retail</p>
-                <p><i class="fas fa-map-marker-alt" style="color:#c59b6d; margin-right:6px;"></i> Abbas Tower, Hyderabad, Telangana, India</p>
-                <div class="social-icons">
+                <p>Women's Kurtas • Wholesale & Retail</p>
+                <p>Abbas Tower, Hyderabad, Telangana, India</p>
+                <div class="social-row">
                     <a href="https://instagram.com/musaqind" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="YOUR_FACEBOOK_LINK" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="mailto:musaqtraders@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
             <div class="footer-col">
-                <h4>Products</h4>
-                <a href="#kurtas">Kurtas</a>
-                <a href="#sarees">Sarees</a>
-                <a href="#lehengas">Lehengas</a>
+                <h4>Kurti Categories</h4>
+                <a href="#kurtas-collection">Embroidered Kurti Sets</a>
+                <a href="#kurti-sets">Daily & Office Kurtas</a>
+                <a href="#festive-kurtas">Festive & Occasion Kurtas</a>
             </div>
 
             <div class="footer-col">
-                <h4>Contact Us</h4>
-                <a href="mailto:musaqtraders@gmail.com"><i class="fas fa-envelope" style="margin-right:6px;"></i> musaqtraders@gmail.com</a>
-                <a href="https://instagram.com/musaqind" target="_blank"><i class="fab fa-instagram" style="margin-right:6px;"></i> @musaqind</a>
-                <a href="YOUR_FACEBOOK_LINK" target="_blank"><i class="fab fa-facebook" style="margin-right:6px;"></i> Musaq Traders</a>
+                <h4>Business Contact</h4>
+                <a href="mailto:musaqtraders@gmail.com">musaqtraders@gmail.com</a>
+                <a href="https://instagram.com/musaqind" target="_blank">Instagram: @musaqind</a>
+                <p>Location: Abbas Tower, Hyderabad, Telangana</p>
             </div>
         </div>
 
-        <div class="copyright">
+        <div class="bottom-bar">
             © 2026 Musaq Traders | Abbas Tower, Hyderabad, Telangana, India. All Rights Reserved.
         </div>
     </footer>
