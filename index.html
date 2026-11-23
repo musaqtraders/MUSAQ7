@@ -42,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 28, 23, 0.78);
+            background: rgba(5, 28, 23, 0.88);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -92,7 +92,7 @@
             border-color: #ffffff;
         }
 
-        /* ================= HOME VIEW (ONLY VIDEO + HEADLINE + SHOP NOW) ================= */
+        /* ================= HOME VIEW ================= */
         #homeView {
             position: relative;
             width: 100%;
@@ -255,7 +255,7 @@
 
         .big-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 26px;
         }
 
@@ -272,7 +272,7 @@
         .big-card-media {
             position: relative;
             width: 100%;
-            height: 380px;
+            height: 360px;
             background: #e3eee9;
             overflow: hidden;
         }
@@ -410,6 +410,12 @@
             text-decoration: none;
             font-size: 0.78rem;
             margin: 4px;
+            transition: 0.2s;
+        }
+
+        .link-chip:hover {
+            background: #ffffff;
+            color: var(--deep-green);
         }
 
         @media (max-width: 600px) {
@@ -421,7 +427,7 @@
                 max-width: 280px;
             }
             .big-card-media {
-                height: 340px;
+                height: 330px;
             }
         }
     </style>
@@ -506,7 +512,7 @@
                 <div class="big-card" data-cat="three-piece">
                     <div class="big-card-media">
                         <span class="big-rate-badge">Wholesale: ₹680</span>
-                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85" alt="3-Piece Suit">
+                        <img src="IMG-20261122-WA0001.jpg" onerror="this.src='https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85'" alt="3-Piece Suit">
                     </div>
                     <div class="big-card-body">
                         <div>
@@ -568,7 +574,4 @@
                             </div>
                             <div class="big-btn-row">
                                 <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%20Night%20Suit%20(Rs.420)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
-                            </div>
-                        </div>
-                    </div>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%20Night%20Suit%20(Rs.420)" class="big-action-bt
