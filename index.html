@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUSAQ | Ladies Fashion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>MUSAQ | Discover MUSAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,98 +15,204 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #051c17;
+            background-color: #050505;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .bg-video {
-            position: fixed;
+        .page-shell {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: #070707;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Subtle geometric gold-tint accents like reference */
+        .geo-bg {
+            position: absolute;
             inset: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            pointer-events: none;
+            overflow: hidden;
             z-index: 0;
-            filter: brightness(0.58);
         }
 
-        .video-tint {
-            position: fixed;
-            inset: 0;
-            background: rgba(5, 28, 23, 0.45);
-            z-index: 1;
+        .geo-box-1 {
+            position: absolute;
+            top: 210px;
+            left: -20px;
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(242, 230, 117, 0.22);
+            background: rgba(242, 230, 117, 0.08);
         }
 
-        .center-stage {
+        .geo-box-2 {
+            position: absolute;
+            top: 170px;
+            right: -18px;
+            width: 110px;
+            height: 110px;
+            background: rgba(242, 230, 117, 0.14);
+        }
+
+        .geo-box-3 {
+            position: absolute;
+            bottom: 180px;
+            right: -15px;
+            width: 105px;
+            height: 105px;
+            border: 2px solid rgba(242, 230, 117, 0.22);
+        }
+
+        .content-layer {
             position: relative;
             z-index: 2;
-            min-height: 100vh;
+            padding: 34px 24px 28px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 36px 20px;
-            gap: 22px;
+            gap: 20px;
         }
 
-        .center-logo {
-            width: 190px;
+        /* Big Center Logo */
+        .big-logo {
+            width: 175px;
             max-width: 65vw;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.55));
+            filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
         }
 
-        .shop-btn {
-            background: #ffffff;
-            color: #051c17;
-            text-decoration: none;
-            padding: 14px 42px;
-            border-radius: 8px;
-            font-size: 1rem;
+        /* Headline in matching soft yellow */
+        .discover-heading {
+            font-size: 2.35rem;
             font-weight: 700;
-            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
-            transition: transform 0.2s;
+            line-height: 1.12;
+            color: #f4ea7a;
+            letter-spacing: -0.4px;
         }
 
-        .shop-btn:hover {
+        .tagline {
+            font-size: 0.96rem;
+            color: #f3f3f3;
+            font-weight: 400;
+            margin-top: -6px;
+        }
+
+        /* Yellow Shop Now Button */
+        .shop-now-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 310px;
+            background-color: #f4ea7a;
+            color: #0b0b0b;
+            text-decoration: none;
+            padding: 15px 28px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(244, 234, 122, 0.18);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .shop-now-btn:hover {
+            background-color: #fff48a;
             transform: translateY(-2px);
         }
 
-        .insta-btn {
-            display: inline-flex;
+        /* Running Video Frame */
+        .video-card {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(244, 234, 122, 0.28);
+            background: #121212;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Bottom Social Bar: Facebook, Instagram, Gmail */
+        .bottom-socials {
+            position: relative;
+            z-index: 2;
+            background: #111111;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 20px 24px 26px;
+            text-align: center;
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 9px;
-            color: #ffffff;
+            gap: 28px;
+            margin-bottom: 10px;
+        }
+
+        .social-row a {
+            color: #f4ea7a;
+            font-size: 1.45rem;
             text-decoration: none;
-            background: rgba(5, 28, 23, 0.78);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            padding: 10px 22px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 500;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-row a:hover {
+            color: #ffffff;
+            transform: scale(1.12);
+        }
+
+        .copy-note {
+            font-size: 0.72rem;
+            color: #9e9e9e;
         }
     </style>
 </head>
 <body>
 
-    <video class="bg-video" autoplay muted loop playsinline>
-        <source src="YTShort_23Nov2026_17_51_18.mp4" type="video/mp4">
-    </video>
-    <div class="video-tint"></div>
+    <div class="page-shell">
+        <div class="geo-bg">
+            <div class="geo-box-1"></div>
+            <div class="geo-box-2"></div>
+            <div class="geo-box-3"></div>
+        </div>
 
-    <main class="center-stage">
-        <img src="5956-removebg-preview.png" alt="MUSAQ Logo" class="center-logo" onerror="this.style.display='none'">
+        <main class="content-layer">
+            <img src="5956-removebg-preview.png" alt="MUSAQ Logo" class="big-logo" onerror="this.style.display='none'">
 
-        <a href="shop.html" class="shop-btn">Shop Now</a>
+            <h1 class="discover-heading">Discover<br>MUSAQ</h1>
+            <p class="tagline">Stylish fashion at MUSAQ</p>
 
-        <a href="https://instagram.com/musaqind" target="_blank" class="insta-btn">
-            <i class="fab fa-instagram"></i>
-            <span>@musaqind</span>
-        </a>
-    </main>
+            <a href="shop.html" class="shop-now-btn">Shop Now</a>
+
+            <div class="video-card">
+                <video autoplay muted loop playsinline controls>
+                    <source src="YTShort_23Nov2026_17_51_18.mp4" type="video/mp4">
+                </video>
+            </div>
+        </main>
+
+        <footer class="bottom-socials">
+            <div class="social-row">
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/musaqind" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:musaqtraders@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="copy-note">© 2026 MUSAQ • Hyderabad</div>
+        </footer>
+    </div>
 
 </body>
 </html>
