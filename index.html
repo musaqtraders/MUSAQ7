@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musaq Traders | Wholesale Women's Wear — Hyderabad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>MUSAQ | Stylish and Innovative Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --emerald-dark: #061a12;
-            --emerald-deep: #0b2b1f;
-            --emerald-mid: #144532;
-            --green-bg: #f2f8f4;
-            --green-card: #ffffff;
-            --green-soft: #e3f0e8;
-            --gold: #cca468;
-            --gold-light: #ecd09e;
-            --ink: #0b2218;
-            --muted: #466155;
-            --border-green: #cbe0d3;
+            --deep-green: #051c17;
+            --mid-green: #0b2e26;
+            --wave-green: #144d40;
+            --shop-bg: #f2f8f5;
+            --card-bg: #ffffff;
+            --ink: #08211b;
+            --muted: #49635c;
+            --border: #c9ddd6;
         }
 
         * {
@@ -28,124 +25,89 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--emerald-dark);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--deep-green);
             color: #ffffff;
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Sticky Luxury Green Header */
-        header {
+        /* Top Bar */
+        .top-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(6, 26, 18, 0.88);
-            backdrop-filter: blur(8px);
-            padding: 14px 6%;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
-            border-bottom: 1px solid rgba(204, 164, 104, 0.35);
+            background: rgba(5, 28, 23, 0.78);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .brand-wrap {
+        .brand-mini {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             cursor: pointer;
-            text-decoration: none;
         }
 
-        .logo-frame {
-            background: #04120c;
-            padding: 5px 8px;
-            border: 1px solid rgba(204, 164, 104, 0.5);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-frame img {
-            height: 46px;
+        .brand-mini img {
+            height: 36px;
             width: auto;
-            max-width: 80px;
             object-fit: contain;
-            display: block;
         }
 
-        .brand-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.85rem;
-            font-weight: 700;
-            letter-spacing: 1.8px;
-            color: var(--gold-light);
-            line-height: 1.05;
-            text-transform: uppercase;
-        }
-
-        .brand-sub {
-            font-size: 0.68rem;
-            letter-spacing: 1.6px;
-            text-transform: uppercase;
-            color: #cbe2d6;
-        }
-
-        .nav-tabs {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-        }
-
-        .nav-btn {
-            background: transparent;
-            border: none;
-            color: #eef7f2;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.78rem;
-            letter-spacing: 1.6px;
-            text-transform: uppercase;
-            cursor: pointer;
-            padding: 8px 14px;
-            transition: 0.3s;
-        }
-
-        .nav-btn:hover,
-        .nav-btn.active {
-            color: var(--gold-light);
-        }
-
-        .nav-shop-pill {
-            background: var(--gold);
-            color: var(--emerald-dark);
-            border: 1px solid var(--gold-light);
+        .brand-mini span {
+            font-size: 0.88rem;
             font-weight: 600;
-            border-radius: 4px;
+            letter-spacing: 1.5px;
+            color: #ffffff;
         }
 
-        .nav-shop-pill:hover {
-            background: var(--gold-light);
-            color: var(--emerald-dark);
+        .top-actions {
+            display: flex;
+            gap: 10px;
         }
 
-        /* ================= HOME PAGE (FULL SCREEN VIDEO) ================= */
-        #homePage {
+        .top-btn {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .top-btn:hover,
+        .top-btn.active {
+            background: #ffffff;
+            color: var(--deep-green);
+            border-color: #ffffff;
+        }
+
+        /* ================= HOME VIEW (BACKGROUND VIDEO + DESIGN.COM LOOK) ================= */
+        #homeView {
             position: relative;
             width: 100%;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 110px 6% 50px;
+            text-align: center;
+            padding: 95px 6% 50px;
             overflow: hidden;
+            background-color: var(--deep-green);
         }
 
-        .fullscreen-video {
+        .bg-video-layer {
             position: fixed;
             top: 0;
             left: 0;
@@ -153,479 +115,477 @@
             height: 100vh;
             object-fit: cover;
             z-index: 0;
-            filter: brightness(0.76) contrast(1.06) saturate(1.12);
+            filter: brightness(0.64) contrast(1.08) saturate(1.15);
         }
 
-        .green-screen-tint {
+        .green-wave-overlay {
             position: fixed;
             inset: 0;
-            background: linear-gradient(
-                180deg,
-                rgba(6, 26, 18, 0.72) 0%,
-                rgba(11, 43, 31, 0.54) 50%,
-                rgba(6, 26, 18, 0.86) 100%
-            );
             z-index: 1;
             pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 88%, rgba(20, 77, 64, 0.72) 0%, rgba(5, 28, 23, 0.82) 65%),
+                linear-gradient(180deg, rgba(5, 28, 23, 0.72) 0%, rgba(7, 36, 29, 0.56) 55%, rgba(5, 28, 23, 0.88) 100%);
         }
 
-        .home-center-box {
-            position: relative;
-            z-index: 2;
-            max-width: 780px;
+        .wave-lines {
+            position: fixed;
+            bottom: -10px;
+            left: 0;
             width: 100%;
-            text-align: center;
-            background: rgba(6, 26, 18, 0.52);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(204, 164, 104, 0.42);
-            padding: 46px 32px;
-            border-radius: 10px;
+            height: 210px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.45;
+            background: repeating-radial-gradient(
+                ellipse at 50% 120%,
+                transparent 0px,
+                transparent 10px,
+                rgba(140, 215, 195, 0.28) 11px,
+                transparent 13px
+            );
         }
 
-        .home-badge {
-            display: inline-block;
-            font-size: 0.74rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            border: 1px solid rgba(236, 208, 158, 0.45);
-            padding: 6px 16px;
-            border-radius: 20px;
+        .hero-stack {
+            position: relative;
+            z-index: 3;
+            max-width: 560px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .discover-label {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #eef6f3;
+            letter-spacing: 0.5px;
             margin-bottom: 18px;
         }
 
-        .home-center-box h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.3rem;
-            font-weight: 600;
-            line-height: 1.12;
-            color: #ffffff;
-            margin-bottom: 14px;
-        }
-
-        .home-center-box .tagline {
-            font-size: 0.96rem;
-            color: #e4f2ea;
-            font-weight: 300;
-            max-width: 580px;
-            margin: 0 auto 26px;
-        }
-
-        .shop-now-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--gold);
-            color: var(--emerald-dark);
-            border: 1px solid var(--gold-light);
-            padding: 15px 38px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
+        .hero-headline {
+            font-size: 3.1rem;
             font-weight: 700;
-            letter-spacing: 2.2px;
-            text-transform: uppercase;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-bottom: 30px;
+            line-height: 1.15;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 34px;
         }
 
-        .shop-now-main:hover {
-            background: var(--gold-light);
+        .cta-white-btn {
+            background-color: #ffffff;
+            color: #0b241e;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 44px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cta-white-btn:hover {
+            background-color: #eef6f3;
             transform: translateY(-2px);
         }
 
-        .home-info-strip {
-            border-top: 1px solid rgba(236, 208, 158, 0.25);
-            padding-top: 22px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            align-items: center;
-        }
-
-        .address-text {
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            color: #f0f8f4;
-        }
-
-        .address-text i {
-            color: var(--gold-light);
-            margin-right: 6px;
-        }
-
-        .social-pills {
+        .home-footer-links {
+            margin-top: 42px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
         }
 
-        .social-pill {
+        .link-chip {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 9px 16px;
-            border-radius: 25px;
-            background: rgba(11, 43, 31, 0.78);
-            border: 1px solid rgba(204, 164, 104, 0.45);
-            color: #ffffff;
+            gap: 7px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(5, 28, 23, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #eaf4f0;
             text-decoration: none;
-            font-size: 0.8rem;
-            transition: 0.3s;
+            font-size: 0.78rem;
+            transition: 0.25s;
         }
 
-        .social-pill:hover {
-            background: var(--gold);
-            color: var(--emerald-dark);
+        .link-chip:hover {
+            background: #ffffff;
+            color: var(--deep-green);
         }
 
-        /* ================= SHOPPING PAGE ================= */
-        #shopPage {
+        /* ================= SHOP VIEW (LARGE CARDS WITH RATE, SIZE, IG & GMAIL) ================= */
+        #shopView {
             display: none;
             position: relative;
             z-index: 5;
-            background-color: var(--green-bg);
-            color: var(--ink);
             min-height: 100vh;
-            padding: 110px 6% 70px;
+            background-color: var(--shop-bg);
+            color: var(--ink);
+            padding: 94px 5% 68px;
         }
 
-        .shop-container {
-            max-width: 1280px;
+        .shop-wrap {
+            max-width: 1260px;
             margin: auto;
         }
 
-        .shop-header {
+        .shop-top {
             text-align: center;
-            margin-bottom: 36px;
+            margin-bottom: 26px;
         }
 
-        .shop-header .eyebrow {
-            font-size: 0.74rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #166547;
-            font-weight: 600;
-            display: block;
+        .shop-top h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ink);
             margin-bottom: 6px;
         }
 
-        .shop-header h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.7rem;
-            color: var(--ink);
-        }
-
-        .shop-header p {
-            font-size: 0.9rem;
+        .shop-top p {
+            font-size: 0.88rem;
             color: var(--muted);
-            max-width: 620px;
-            margin: 8px auto 0;
         }
 
-        .filter-tabs {
+        .category-bar {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
 
-        .tab-btn {
+        .cat-btn {
             background: #ffffff;
-            border: 1px solid var(--border-green);
             color: var(--ink);
-            padding: 9px 20px;
-            border-radius: 25px;
-            font-size: 0.8rem;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.78rem;
             font-weight: 500;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: var(--emerald-deep);
-            color: var(--gold-light);
-            border-color: var(--emerald-deep);
+        .cat-btn.active,
+        .cat-btn:hover {
+            background: var(--deep-green);
+            color: #ffffff;
+            border-color: var(--deep-green);
         }
 
-        .products-grid {
+        /* Large Cards Grid */
+        .big-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
             gap: 28px;
         }
 
-        .product-card {
-            background: var(--green-card);
-            border: 1px solid var(--border-green);
-            border-radius: 10px;
+        .big-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(11, 43, 31, 0.06);
+            box-shadow: 0 10px 28px rgba(8, 33, 27, 0.08);
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s;
         }
 
-        .product-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .product-img {
+        .big-card-media {
             position: relative;
             width: 100%;
-            height: 360px;
-            background: var(--green-soft);
+            height: 410px;
+            background: #e3eee9;
             overflow: hidden;
         }
 
-        .product-img img {
+        .big-card-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        .price-badge {
+        .big-rate-badge {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--emerald-dark);
-            color: var(--gold-light);
-            border: 1px solid var(--gold);
-            padding: 5px 12px;
+            top: 14px;
+            right: 14px;
+            background: var(--deep-green);
+            color: #ffffff;
+            padding: 7px 15px;
             border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 600;
+            font-size: 0.88rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
-        .product-body {
-            padding: 20px;
+        .big-card-body {
+            padding: 22px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .product-cat {
-            font-size: 0.7rem;
-            letter-spacing: 1.8px;
+        .big-cat-label {
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            color: #166547;
-            font-weight: 600;
+            letter-spacing: 1.2px;
+            color: var(--wave-green);
             margin-bottom: 4px;
         }
 
-        .product-body h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.55rem;
+        .big-card-body h3 {
+            font-size: 1.28rem;
+            font-weight: 700;
             color: var(--ink);
-            margin-bottom: 6px;
-        }
-
-        .product-desc {
-            font-size: 0.84rem;
-            color: var(--muted);
             margin-bottom: 14px;
         }
 
-        .size-price-row {
-            background: var(--green-soft);
-            padding: 10px 12px;
-            border-radius: 6px;
+        .info-table-box {
+            background: var(--shop-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
-            margin-bottom: 14px;
+            gap: 10px;
+            font-size: 0.84rem;
         }
 
-        .size-price-row strong {
+        .info-table-box div span {
+            color: var(--muted);
+            font-size: 0.74rem;
+            display: block;
+        }
+
+        .info-table-box div strong {
             color: var(--ink);
+            font-size: 0.9rem;
         }
 
-        .order-btns {
+        .big-btn-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
 
-        .btn-order {
+        .big-action-btn {
             text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 0.78rem;
-            font-weight: 600;
+            padding: 11px 12px;
+            border-radius: 8px;
             text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            transition: 0.3s;
+            gap: 7px;
+            transition: 0.2s;
         }
 
-        .btn-ig {
-            background: var(--emerald-deep);
-            color: var(--gold-light);
+        .btn-ig-solid {
+            background: var(--deep-green);
+            color: #ffffff;
         }
 
-        .btn-ig:hover {
-            background: var(--emerald-dark);
+        .btn-ig-solid:hover {
+            background: var(--wave-green);
         }
 
-        .btn-gm {
-            background: var(--green-bg);
+        .btn-gm-soft {
+            background: var(--shop-bg);
             color: var(--ink);
-            border: 1px solid var(--border-green);
+            border: 1px solid var(--border);
         }
 
-        .btn-gm:hover {
-            background: var(--green-soft);
+        .btn-gm-soft:hover {
+            background: #dfeee7;
         }
 
-        .shop-footer {
-            margin-top: 60px;
-            background: var(--emerald-dark);
-            color: #d8ebe1;
-            padding: 34px 6%;
-            border-radius: 10px;
+        .shop-bottom-bar {
+            margin-top: 50px;
+            background: var(--deep-green);
+            color: #ffffff;
+            padding: 28px 20px;
+            border-radius: 14px;
             text-align: center;
         }
 
-        .shop-footer p {
-            font-size: 0.85rem;
-            margin-bottom: 12px;
+        .shop-bottom-bar p {
+            font-size: 0.9rem;
+            margin-bottom: 14px;
         }
 
-        @media (max-width: 768px) {
-            .home-center-box {
-                padding: 32px 20px;
+        @media (max-width: 600px) {
+            .hero-headline {
+                font-size: 2.25rem;
             }
-            .home-center-box h1 {
-                font-size: 2.3rem;
+            .cta-white-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            .big-card-media {
+                height: 360px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="brand-wrap" onclick="showPage('home')">
-            <div class="logo-frame">
-                <img src="5956-removebg-preview.png" alt="Musaq Traders Logo" onerror="this.style.display='none'">
-            </div>
-            <div>
-                <div class="brand-title">Musaq Traders</div>
-                <div class="brand-sub">Wholesale Women's Wear • Hyderabad</div>
-            </div>
+    <!-- Top Navigation Bar -->
+    <div class="top-bar">
+        <div class="brand-mini" onclick="switchView('home')">
+            <img src="5956-removebg-preview.png" alt="MUSAQ Logo" onerror="this.style.display='none'">
+            <span>MUSAQ</span>
         </div>
-
-        <div class="nav-tabs">
-            <button class="nav-btn active" id="navHome" onclick="showPage('home')">Home</button>
-            <button class="nav-btn nav-shop-pill" id="navShop" onclick="showPage('shop')">Shop Now</button>
+        <div class="top-actions">
+            <button type="button" class="top-btn active" id="btnHomeTab" onclick="switchView('home')">Home</button>
+            <button type="button" class="top-btn" id="btnShopTab" onclick="switchView('shop')">Shop Now</button>
         </div>
-    </header>
+    </div>
 
-    <!-- ================= HOME PAGE (FULL BACKGROUND VIDEO) ================= -->
-    <main id="homePage">
-        <video class="fullscreen-video" autoplay muted loop playsinline>
+    <!-- ================= HOME VIEW ================= -->
+    <main id="homeView">
+        <video class="bg-video-layer" autoplay muted loop playsinline>
             <source src="YTShort_23Nov2026_17_51_18.mp4" type="video/mp4">
         </video>
-        <div class="green-screen-tint"></div>
+        <div class="green-wave-overlay"></div>
+        <div class="wave-lines"></div>
 
-        <div class="home-center-box">
-            <div class="home-badge">Wholesale Women's Wear • Starting ₹510</div>
-            <h1>Musaq Traders</h1>
-            <p class="tagline">Exclusive Wholesale 2-Piece Suits, 3-Piece Suits, Palazzo Sets &amp; Kurtas. Tap Shop Now to view fresh model designs, sizes, and wholesale pricing.</p>
+        <div class="hero-stack">
+            <div class="discover-label">Discover MUSAQ</div>
+            <h1 class="hero-headline">Stylish and innovative fashion.</h1>
+            <button type="button" class="cta-white-btn" id="mainShopBtn" onclick="switchView('shop')">Shop Now</button>
 
-            <button class="shop-now-main" onclick="showPage('shop')">
-                <i class="fas fa-bag-shopping"></i> Shop Now
-            </button>
-
-            <div class="home-info-strip">
-                <div class="address-text">
-                    <i class="fas fa-location-dot"></i> Address: Abbas Tower, Hyderabad, Telangana, India
-                </div>
-
-                <div class="social-pills">
-                    <a href="https://instagram.com/musaqind" target="_blank" class="social-pill">
-                        <i class="fab fa-instagram"></i> @musaqind
-                    </a>
-                    <a href="mailto:musaqtraders@gmail.com" class="social-pill">
-                        <i class="fas fa-envelope"></i> musaqtraders@gmail.com
-                    </a>
-                    <a href="https://facebook.com" target="_blank" class="social-pill">
-                        <i class="fab fa-facebook-f"></i> Facebook: Musaq Traders
-                    </a>
-                </div>
+            <div class="home-footer-links">
+                <a href="https://instagram.com/musaqind" target="_blank" class="link-chip">
+                    <i class="fab fa-instagram"></i> @musaqind
+                </a>
+                <a href="mailto:musaqtraders@gmail.com" class="link-chip">
+                    <i class="fas fa-envelope"></i> musaqtraders@gmail.com
+                </a>
+                <a href="https://facebook.com" target="_blank" class="link-chip">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
             </div>
         </div>
     </main>
 
-    <!-- ================= SHOPPING PAGE ================= -->
-    <section id="shopPage">
-        <div class="shop-container">
-            <div class="shop-header">
-                <span class="eyebrow">Musaq Traders • Wholesale Catalogue</span>
-                <h2>2-Piece, 3-Piece Suits &amp; Palazzo Sets</h2>
-                <p>Select your category below to view clean model outfits, available sizes, and wholesale prices starting at ₹510.</p>
+    <!-- ================= SHOP VIEW ================= -->
+    <section id="shopView">
+        <div class="shop-wrap">
+            <div class="shop-top">
+                <h2>MUSAQ Wholesale Collection</h2>
+                <p>Suits, Kurti, 3-Piece Suits, 2-Piece Suits, Leggings, Dupatte &amp; Pants</p>
             </div>
 
-            <!-- Filter Buttons -->
-            <div class="filter-tabs">
-                <button class="tab-btn active" onclick="filterItems('all', this)">All Suits (₹510+)</button>
-                <button class="tab-btn" onclick="filterItems('two', this)">2-Piece Suits</button>
-                <button class="tab-btn" onclick="filterItems('three', this)">3-Piece Suits</button>
-                <button class="tab-btn" onclick="filterItems('palazzo', this)">Palazzo Sets</button>
+            <!-- Filter Tabs -->
+            <div class="category-bar">
+                <button type="button" class="cat-btn active" onclick="filterCollection('all', this)">All</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('suits', this)">Suits</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('kurti', this)">Kurti</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('three-piece', this)">3-Piece Suits</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('two-piece', this)">2-Piece Suits</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('leggings', this)">Leggings</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('dupatte', this)">Dupatte</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('pants', this)">Pants</button>
             </div>
 
-            <!-- Model Cards Grid -->
-            <div class="products-grid">
+            <!-- Large Cards Grid -->
+            <div class="big-cards-grid">
 
-                <!-- 1. 2-Piece Suit Model -->
-                <div class="product-card" data-type="two">
-                    <div class="product-img">
-                        <span class="price-badge">₹510 / Piece</span>
-                        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=85" alt="2-Piece Printed Cotton Suit">
+                <!-- 1. Suits -->
+                <div class="big-card" data-cat="suits">
+                    <div class="big-card-media">
+                        <span class="big-rate-badge">Rate: ₹510</span>
+                        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=85" alt="Designer Suit">
                     </div>
-                    <div class="product-body">
+                    <div class="big-card-body">
                         <div>
-                            <div class="product-cat">2-Piece Suit Set</div>
-                            <h3>Emerald Floral 2-Piece Suit</h3>
-                            <p class="product-desc">Soft breathable cotton-rayon kurta with matching straight trouser pant for daily &amp; boutique wholesale.</p>
+                            <div class="big-cat-label">Suits</div>
+                            <h3>Classic Ethnic Suit Design</h3>
                         </div>
                         <div>
-                            <div class="size-price-row">
-                                <span>Sizes: <strong>M, L, XL, XXL</strong></span>
-                                <span>Wholesale: <strong>₹510</strong></span>
+                            <div class="info-table-box">
+                                <div><span>Rate</span><strong>₹510</strong></div>
+                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
                             </div>
-                            <div class="order-btns">
-                                <a href="https://instagram.com/musaqind" target="_blank" class="btn-order btn-ig"><i class="fab fa-instagram"></i> Order IG</a>
-                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%202-Piece%20Suit%20(Rs.510)" class="btn-order btn-gm"><i class="fas fa-envelope"></i> Gmail</a>
+                            <div class="big-btn-row">
+                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%20Suit%20(Rate%20Rs.510)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. 2-Piece Suit Model 2 -->
-                <div class="product-card" data-type="two">
-                    <div class="product-img">
-                        <span class="price-badge">₹510 / Piece</span>
-                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=800&q=85" alt="Pastel 2-Piece Kurta Set">
+                <!-- 2. Kurti -->
+                <div class="big-card" data-cat="kurti">
+                    <div class="big-card-media">
+                        <span class="big-rate-badge">Rate: ₹510</span>
+                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=900&q=85" alt="Stylish Kurti">
                     </div>
-                    <div class="product-body">
+                    <div class="big-card-body">
                         <div>
-                            <div class="product-cat">2-Piece Suit Set</div>
-                            <h3>Pastel Thread-Work 2-Piece Set</h3>
-                            <p class="product-desc">Clean neckline embroidery with tailored matching bottom, ideal for resellers and retail stores.</p>
+                            <div class="big-cat-label">Kurti</div>
+                            <h3>Stylish Designer Kurti</h3>
                         </div>
                         <div>
-                            <div class="size-price-row">
-                                <span>Sizes: <strong>M, L, XL, XXL</strong></span>
-                                <span>Wholesale: <strong>₹510</strong></span>
+                            <div class="info-table-box">
+                                <div><span>Rate</span><strong>₹510</strong></div>
+                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
                             </div>
-                            <div class="order-btns">
-                                <a href="https://instagram.com/musaqind" target="_blank" class="btn-order btn-ig"><i class="fab fa-instagram"><
+                            <div class="big-btn-row">
+                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%20Kurti%20(Rate%20Rs.510)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 3-Piece Suits -->
+                <div class="big-card" data-cat="three-piece">
+                    <div class="big-card-media">
+                        <span class="big-rate-badge">Rate: ₹510+</span>
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85" alt="3-Piece Suit">
+                    </div>
+                    <div class="big-card-body">
+                        <div>
+                            <div class="big-cat-label">3-Piece Suits</div>
+                            <h3>Grand 3-Piece Suit Set</h3>
+                        </div>
+                        <div>
+                            <div class="info-table-box">
+                                <div><span>Rate</span><strong>₹510+</strong></div>
+                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
+                            </div>
+                            <div class="big-btn-row">
+                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%203-Piece%20Suit" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 2-Piece Suits -->
+                <div class="big-card" data-cat="two-piece">
+                    <div class="big-card-media">
+                        <span class="big-rate-badge">Rate: ₹510</span>
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=85" alt="2-Piece Suit">
+                    </div>
+                    <div class="big-card-body">
+                        <div>
+                            <div class="big-cat-label">2-Piece Suits</div>
+                            <h3>Trendy 2-Piece Suit Set</h3>
+                        </div>
+                        <div>
+                     
