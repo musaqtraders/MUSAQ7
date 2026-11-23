@@ -92,7 +92,7 @@
             border-color: #ffffff;
         }
 
-        /* ================= HOME VIEW (BACKGROUND VIDEO + DESIGN.COM LOOK) ================= */
+        /* ================= HOME VIEW (ONLY VIDEO + HEADLINE + SHOP NOW) ================= */
         #homeView {
             position: relative;
             width: 100%;
@@ -192,34 +192,7 @@
             transform: translateY(-2px);
         }
 
-        .home-footer-links {
-            margin-top: 42px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .link-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: rgba(5, 28, 23, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            color: #eaf4f0;
-            text-decoration: none;
-            font-size: 0.78rem;
-            transition: 0.25s;
-        }
-
-        .link-chip:hover {
-            background: #ffffff;
-            color: var(--deep-green);
-        }
-
-        /* ================= SHOP VIEW (LARGE CARDS WITH RATE, SIZE, IG & GMAIL) ================= */
+        /* ================= SHOP VIEW ================= */
         #shopView {
             display: none;
             position: relative;
@@ -231,13 +204,13 @@
         }
 
         .shop-wrap {
-            max-width: 1260px;
+            max-width: 1280px;
             margin: auto;
         }
 
         .shop-top {
             text-align: center;
-            margin-bottom: 26px;
+            margin-bottom: 24px;
         }
 
         .shop-top h2 {
@@ -280,11 +253,10 @@
             border-color: var(--deep-green);
         }
 
-        /* Large Cards Grid */
         .big-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 26px;
         }
 
         .big-card {
@@ -300,7 +272,7 @@
         .big-card-media {
             position: relative;
             width: 100%;
-            height: 410px;
+            height: 380px;
             background: #e3eee9;
             overflow: hidden;
         }
@@ -318,15 +290,15 @@
             right: 14px;
             background: var(--deep-green);
             color: #ffffff;
-            padding: 7px 15px;
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         .big-card-body {
-            padding: 22px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -343,18 +315,18 @@
         }
 
         .big-card-body h3 {
-            font-size: 1.28rem;
+            font-size: 1.22rem;
             font-weight: 700;
             color: var(--ink);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .info-table-box {
             background: var(--shop-bg);
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 12px 14px;
-            margin-bottom: 16px;
+            padding: 11px 14px;
+            margin-bottom: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -364,7 +336,7 @@
 
         .info-table-box div span {
             color: var(--muted);
-            font-size: 0.74rem;
+            font-size: 0.72rem;
             display: block;
         }
 
@@ -381,15 +353,15 @@
 
         .big-action-btn {
             text-align: center;
-            padding: 11px 12px;
+            padding: 10px 12px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 7px;
+            gap: 6px;
             transition: 0.2s;
         }
 
@@ -413,17 +385,31 @@
         }
 
         .shop-bottom-bar {
-            margin-top: 50px;
+            margin-top: 48px;
             background: var(--deep-green);
             color: #ffffff;
-            padding: 28px 20px;
+            padding: 26px 20px;
             border-radius: 14px;
             text-align: center;
         }
 
         .shop-bottom-bar p {
-            font-size: 0.9rem;
-            margin-bottom: 14px;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+        }
+
+        .link-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.78rem;
+            margin: 4px;
         }
 
         @media (max-width: 600px) {
@@ -435,14 +421,14 @@
                 max-width: 280px;
             }
             .big-card-media {
-                height: 360px;
+                height: 340px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="brand-mini" onclick="switchView('home')">
             <img src="5956-removebg-preview.png" alt="MUSAQ Logo" onerror="this.style.display='none'">
@@ -466,18 +452,6 @@
             <div class="discover-label">Discover MUSAQ</div>
             <h1 class="hero-headline">Stylish and innovative fashion.</h1>
             <button type="button" class="cta-white-btn" id="mainShopBtn" onclick="switchView('shop')">Shop Now</button>
-
-            <div class="home-footer-links">
-                <a href="https://instagram.com/musaqind" target="_blank" class="link-chip">
-                    <i class="fab fa-instagram"></i> @musaqind
-                </a>
-                <a href="mailto:musaqtraders@gmail.com" class="link-chip">
-                    <i class="fas fa-envelope"></i> musaqtraders@gmail.com
-                </a>
-                <a href="https://facebook.com" target="_blank" class="link-chip">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-            </div>
         </div>
     </main>
 
@@ -486,106 +460,115 @@
         <div class="shop-wrap">
             <div class="shop-top">
                 <h2>MUSAQ Wholesale Collection</h2>
-                <p>Suits, Kurti, 3-Piece Suits, 2-Piece Suits, Leggings, Dupatte &amp; Pants</p>
+                <p>Separate wholesale rates &amp; sizes for every item — Abbas Tower, Hyderabad</p>
             </div>
 
             <!-- Filter Tabs -->
             <div class="category-bar">
-                <button type="button" class="cat-btn active" onclick="filterCollection('all', this)">All</button>
-                <button type="button" class="cat-btn" onclick="filterCollection('suits', this)">Suits</button>
-                <button type="button" class="cat-btn" onclick="filterCollection('kurti', this)">Kurti</button>
-                <button type="button" class="cat-btn" onclick="filterCollection('three-piece', this)">3-Piece Suits</button>
+                <button type="button" class="cat-btn active" onclick="filterCollection('all', this)">All Items</button>
                 <button type="button" class="cat-btn" onclick="filterCollection('two-piece', this)">2-Piece Suits</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('three-piece', this)">3-Piece Suits</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('kurti', this)">Kurti</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('night-suit', this)">Night Suit</button>
+                <button type="button" class="cat-btn" onclick="filterCollection('t-shirt', this)">T-Shirt</button>
                 <button type="button" class="cat-btn" onclick="filterCollection('leggings', this)">Leggings</button>
                 <button type="button" class="cat-btn" onclick="filterCollection('dupatte', this)">Dupatte</button>
                 <button type="button" class="cat-btn" onclick="filterCollection('pants', this)">Pants</button>
             </div>
 
-            <!-- Large Cards Grid -->
             <div class="big-cards-grid">
 
-                <!-- 1. Suits -->
-                <div class="big-card" data-cat="suits">
+                <!-- 1. 2-Piece Suits -->
+                <div class="big-card" data-cat="two-piece">
                     <div class="big-card-media">
-                        <span class="big-rate-badge">Rate: ₹510</span>
-                        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=85" alt="Designer Suit">
+                        <span class="big-rate-badge">Wholesale: ₹540</span>
+                        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=85" alt="2-Piece Suit">
                     </div>
                     <div class="big-card-body">
                         <div>
-                            <div class="big-cat-label">Suits</div>
-                            <h3>Classic Ethnic Suit Design</h3>
+                            <div class="big-cat-label">2-Piece Suits</div>
+                            <h3>2-Piece Suit Set</h3>
                         </div>
                         <div>
                             <div class="info-table-box">
-                                <div><span>Rate</span><strong>₹510</strong></div>
+                                <div><span>Wholesale Rate</span><strong>₹540</strong></div>
                                 <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
                             </div>
                             <div class="big-btn-row">
                                 <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%20Suit%20(Rate%20Rs.510)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%202-Piece%20Suit%20(Rs.540)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Kurti -->
-                <div class="big-card" data-cat="kurti">
-                    <div class="big-card-media">
-                        <span class="big-rate-badge">Rate: ₹510</span>
-                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=900&q=85" alt="Stylish Kurti">
-                    </div>
-                    <div class="big-card-body">
-                        <div>
-                            <div class="big-cat-label">Kurti</div>
-                            <h3>Stylish Designer Kurti</h3>
-                        </div>
-                        <div>
-                            <div class="info-table-box">
-                                <div><span>Rate</span><strong>₹510</strong></div>
-                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
-                            </div>
-                            <div class="big-btn-row">
-                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%20Kurti%20(Rate%20Rs.510)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. 3-Piece Suits -->
+                <!-- 2. 3-Piece Suits -->
                 <div class="big-card" data-cat="three-piece">
                     <div class="big-card-media">
-                        <span class="big-rate-badge">Rate: ₹510+</span>
+                        <span class="big-rate-badge">Wholesale: ₹680</span>
                         <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85" alt="3-Piece Suit">
                     </div>
                     <div class="big-card-body">
                         <div>
                             <div class="big-cat-label">3-Piece Suits</div>
-                            <h3>Grand 3-Piece Suit Set</h3>
+                            <h3>3-Piece Suit &amp; Dupatta</h3>
                         </div>
                         <div>
                             <div class="info-table-box">
-                                <div><span>Rate</span><strong>₹510+</strong></div>
+                                <div><span>Wholesale Rate</span><strong>₹680</strong></div>
                                 <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
                             </div>
                             <div class="big-btn-row">
                                 <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="mailto:musaqtraders@gmail.com?subject=Order:%203-Piece%20Suit" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%203-Piece%20Suit%20(Rs.680)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. 2-Piece Suits -->
-                <div class="big-card" data-cat="two-piece">
+                <!-- 3. Kurti -->
+                <div class="big-card" data-cat="kurti">
                     <div class="big-card-media">
-                        <span class="big-rate-badge">Rate: ₹510</span>
-                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=85" alt="2-Piece Suit">
+                        <span class="big-rate-badge">Wholesale: ₹360</span>
+                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=900&q=85" alt="Kurti">
                     </div>
                     <div class="big-card-body">
                         <div>
-                            <div class="big-cat-label">2-Piece Suits</div>
-                            <h3>Trendy 2-Piece Suit Set</h3>
+                            <div class="big-cat-label">Kurti</div>
+                            <h3>Designer Wholesale Kurti</h3>
                         </div>
                         <div>
-                     
+                            <div class="info-table-box">
+                                <div><span>Wholesale Rate</span><strong>₹360</strong></div>
+                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
+                            </div>
+                            <div class="big-btn-row">
+                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%20Kurti%20(Rs.360)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Night Suit -->
+                <div class="big-card" data-cat="night-suit">
+                    <div class="big-card-media">
+                        <span class="big-rate-badge">Wholesale: ₹420</span>
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=85" alt="Night Suit">
+                    </div>
+                    <div class="big-card-body">
+                        <div>
+                            <div class="big-cat-label">Night Suit</div>
+                            <h3>Soft Comfort Night Suit</h3>
+                        </div>
+                        <div>
+                            <div class="info-table-box">
+                                <div><span>Wholesale Rate</span><strong>₹420</strong></div>
+                                <div><span>Size</span><strong>M, L, XL, XXL</strong></div>
+                            </div>
+                            <div class="big-btn-row">
+                                <a href="https://instagram.com/musaqind" target="_blank" class="big-action-btn btn-ig-solid"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="mailto:musaqtraders@gmail.com?subject=Wholesale%20Order:%20Night%20Suit%20(Rs.420)" class="big-action-btn btn-gm-soft"><i class="fas fa-envelope"></i> Gmail</a>
+                            </div>
+                        </div>
+                    </div>
