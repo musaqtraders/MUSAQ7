@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --noir: #0e0d0c;
-            --charcoal: #181614;
-            --ivory: #fdfbf8;
-            --sand: #f4efe8;
-            --gold: #c29b6b;
-            --gold-soft: #e2c299;
-            --ink: #171513;
-            --muted: #665f57;
-            --line: #e5dcd0;
+            --emerald-dark: #071b14;
+            --emerald-deep: #0c2b20;
+            --emerald-mid: #133d2e;
+            --green-tint: #f3f8f5;
+            --green-soft: #e6f1ea;
+            --gold: #c9a26a;
+            --gold-bright: #e7c996;
+            --ink: #0c2219;
+            --muted: #476156;
+            --line: #cfe0d6;
         }
 
         * {
@@ -31,34 +32,34 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--ivory);
+            background-color: var(--green-tint);
             color: var(--ink);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Top Minimal Strip */
+        /* Top Green Strip */
         .top-strip {
-            background-color: var(--noir);
-            color: var(--gold-soft);
+            background-color: var(--emerald-dark);
+            color: var(--gold-bright);
             text-align: center;
             padding: 8px 4%;
             font-size: 0.72rem;
-            letter-spacing: 2.2px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(194, 155, 107, 0.22);
+            border-bottom: 1px solid rgba(201, 162, 106, 0.25);
         }
 
-        /* Editorial Luxury Header */
+        /* Header */
         header {
-            background-color: var(--noir);
-            padding: 18px 6%;
+            background: linear-gradient(90deg, var(--emerald-dark) 0%, var(--emerald-deep) 100%);
+            padding: 16px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 1px solid rgba(194, 155, 107, 0.35);
+            gap: 18px;
+            border-bottom: 1px solid rgba(201, 162, 106, 0.38);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -67,14 +68,14 @@
         .brand-identity {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             text-decoration: none;
         }
 
         .logo-box {
-            background: #141210;
-            padding: 6px 10px;
-            border: 1px solid rgba(194, 155, 107, 0.45);
+            background: var(--emerald-dark);
+            padding: 5px 9px;
+            border: 1px solid rgba(201, 162, 106, 0.5);
             border-radius: 6px;
             display: flex;
             align-items: center;
@@ -82,152 +83,164 @@
         }
 
         .logo-box img {
-            height: 52px;
+            height: 50px;
             width: auto;
-            max-width: 86px;
+            max-width: 84px;
             object-fit: contain;
             display: block;
         }
 
         .brand-text-group .title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.1rem;
+            font-size: 2.05rem;
             font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--gold-soft);
+            letter-spacing: 1.8px;
+            color: var(--gold-bright);
             line-height: 1.05;
             text-transform: uppercase;
         }
 
         .brand-text-group .sub {
-            font-size: 0.72rem;
-            letter-spacing: 2px;
+            font-size: 0.7rem;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
-            color: #d6ccc0;
+            color: #cbe0d5;
             margin-top: 3px;
         }
 
         .nav-menu {
             display: flex;
-            gap: 28px;
+            gap: 26px;
             flex-wrap: wrap;
             align-items: center;
         }
 
         .nav-menu a {
-            color: #f6f1eb;
+            color: #eef7f1;
             text-decoration: none;
-            font-size: 0.78rem;
-            letter-spacing: 1.8px;
+            font-size: 0.76rem;
+            letter-spacing: 1.6px;
             text-transform: uppercase;
-            font-weight: 400;
             transition: color 0.3s ease;
         }
 
         .nav-menu a:hover {
-            color: var(--gold-soft);
+            color: var(--gold-bright);
         }
 
-        /* Editorial Hero Section */
+        /* Hero Section with Background Video */
         .hero {
             position: relative;
-            min-height: 550px;
-            background: linear-gradient(90deg, rgba(14, 13, 12, 0.92) 0%, rgba(14, 13, 12, 0.68) 58%, rgba(14, 13, 12, 0.38) 100%),
-                        url('IMG-20261122-WA0001.jpg') center/cover no-repeat;
+            min-height: 580px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 80px 6%;
             overflow: hidden;
+            background-color: var(--emerald-dark);
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.72) contrast(1.05) saturate(1.1);
+        }
+
+        .hero-green-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(7, 27, 20, 0.86) 0%,
+                rgba(12, 43, 32, 0.64) 55%,
+                rgba(12, 43, 32, 0.38) 100%
+            );
+            z-index: 1;
         }
 
         .hero-inner {
-            max-width: 650px;
+            position: relative;
+            max-width: 640px;
             z-index: 2;
         }
 
         .hero-kicker {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
+            font-size: 0.74rem;
+            letter-spacing: 2.6px;
             text-transform: uppercase;
-            color: var(--gold-soft);
-            margin-bottom: 16px;
+            color: var(--gold-bright);
+            margin-bottom: 14px;
         }
 
         .hero-inner h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.45rem;
+            font-size: 3.4rem;
             font-weight: 500;
             line-height: 1.08;
             color: #ffffff;
             margin-bottom: 18px;
-            letter-spacing: 1px;
         }
 
         .hero-inner p {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             font-weight: 300;
-            color: #e9e0d5;
-            margin-bottom: 32px;
-            max-width: 560px;
+            color: #e6f2ec;
+            margin-bottom: 30px;
+            max-width: 550px;
         }
 
-        .btn-editorial {
+        .btn-gold {
             display: inline-block;
-            padding: 14px 30px;
-            border: 1px solid var(--gold-soft);
+            padding: 13px 30px;
             background-color: var(--gold);
-            color: var(--noir);
+            border: 1px solid var(--gold-bright);
+            color: var(--emerald-dark);
             text-decoration: none;
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 2.2px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
         }
 
-        .btn-editorial:hover {
-            background-color: var(--gold-soft);
+        .btn-gold:hover {
+            background-color: var(--gold-bright);
         }
 
-        .btn-ghost {
+        .btn-green-outline {
             display: inline-block;
-            padding: 14px 26px;
-            border: 1px solid rgba(255, 255, 255, 0.55);
-            background-color: transparent;
+            padding: 13px 26px;
+            background-color: rgba(12, 43, 32, 0.55);
+            border: 1px solid rgba(231, 201, 150, 0.65);
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             font-weight: 400;
-            letter-spacing: 2.2px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             margin-left: 12px;
             transition: all 0.3s ease;
         }
 
-        .btn-ghost:hover {
-            border-color: var(--gold-soft);
-            color: var(--gold-soft);
+        .btn-green-outline:hover {
+            border-color: var(--gold-bright);
+            color: var(--gold-bright);
         }
 
-        .hero-watermark {
-            z-index: 1;
-            opacity: 0.2;
-            pointer-events: none;
-        }
-
-        .hero-watermark img {
-            width: 230px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* Minimalist Pillars Bar */
+        /* Green Highlights Bar */
         .pillars {
-            background-color: var(--sand);
+            background-color: var(--green-soft);
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
-            padding: 32px 6%;
+            padding: 30px 6%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
@@ -238,7 +251,6 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.35rem;
             font-weight: 600;
-            letter-spacing: 1px;
             color: var(--ink);
             margin-bottom: 4px;
         }
@@ -246,51 +258,50 @@
         .pillar-box p {
             font-size: 0.8rem;
             color: var(--muted);
-            letter-spacing: 0.4px;
         }
 
-        /* Section Container */
+        /* Sections */
         .section {
-            padding: 88px 6%;
+            padding: 84px 6%;
             max-width: 1320px;
             margin: auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 54px;
+            margin-bottom: 50px;
         }
 
         .section-header .eyebrow {
             font-size: 0.72rem;
-            letter-spacing: 2.8px;
+            letter-spacing: 2.6px;
             text-transform: uppercase;
-            color: #966d3e;
+            color: #1b6b4d;
+            font-weight: 600;
             display: block;
             margin-bottom: 8px;
         }
 
         .section-header h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.75rem;
+            font-size: 2.7rem;
             font-weight: 500;
-            letter-spacing: 1.2px;
             color: var(--ink);
         }
 
         .section-header p {
             font-size: 0.9rem;
             color: var(--muted);
-            max-width: 620px;
+            max-width: 600px;
             margin: 10px auto 0;
             font-weight: 300;
         }
 
-        /* Category Cards Grid */
+        /* Category Cards */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            gap: 30px;
         }
 
         .category-card {
@@ -303,14 +314,14 @@
 
         .category-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 14px 32px rgba(23, 21, 19, 0.08);
+            box-shadow: 0 14px 30px rgba(12, 43, 32, 0.09);
         }
 
         .photo-box {
             width: 100%;
-            height: 360px;
+            height: 350px;
             overflow: hidden;
-            background-color: #efe8df;
+            background-color: var(--green-soft);
         }
 
         .photo-box img {
@@ -337,7 +348,8 @@
             font-size: 0.7rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #966d3e;
+            color: #1b6b4d;
+            font-weight: 600;
             margin-bottom: 6px;
         }
 
@@ -357,7 +369,7 @@
         }
 
         .card-footer-line {
-            border-top: 1px solid #f0e8de;
+            border-top: 1px solid var(--green-soft);
             padding-top: 14px;
             display: flex;
             justify-content: space-between;
@@ -370,54 +382,64 @@
             letter-spacing: 1.4px;
             text-transform: uppercase;
             color: var(--ink);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .inquiry-link {
             font-size: 0.72rem;
-            letter-spacing: 1.6px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             text-decoration: none;
-            color: #8a5e2b;
+            color: #145a40;
             font-weight: 600;
-            border-bottom: 1px solid #8a5e2b;
+            border-bottom: 1px solid #145a40;
             padding-bottom: 2px;
         }
 
-        .inquiry-link:hover {
-            color: var(--noir);
-            border-color: var(--noir);
-        }
-
-        /* Editorial Wholesale & Catalog Section */
-        .editorial-band {
-            background-color: var(--charcoal);
+        /* Green Wholesale Band with Subtle Video Background */
+        .video-band {
+            position: relative;
+            background-color: var(--emerald-deep);
             color: #ffffff;
-            padding: 84px 6%;
+            padding: 82px 6%;
+            overflow: hidden;
         }
 
-        .editorial-wrap {
+        .video-band .bg-video {
+            filter: brightness(0.45) contrast(1.05);
+        }
+
+        .band-green-tint {
+            position: absolute;
+            inset: 0;
+            background: rgba(9, 34, 25, 0.78);
+            z-index: 1;
+        }
+
+        .band-wrap {
+            position: relative;
+            z-index: 2;
             max-width: 1240px;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 44px;
+            gap: 42px;
             align-items: start;
         }
 
-        .editorial-col h3 {
+        .band-col h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.1rem;
             font-weight: 500;
-            color: var(--gold-soft);
+            color: var(--gold-bright);
             margin-bottom: 14px;
         }
 
-        .editorial-col p {
+        .band-col p {
             font-size: 0.9rem;
-            color: #dfd6cb;
+            color: #e4f0ea;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .clean-list {
@@ -426,27 +448,25 @@
 
         .clean-list li {
             font-size: 0.85rem;
-            color: #f3ece3;
-            padding: 9px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            letter-spacing: 0.4px;
+            color: #f2f9f5;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
         }
 
-        /* Boutique & Wholesale Desk */
+        /* Contact Card */
         .desk-box {
             background-color: #ffffff;
             border: 1px solid var(--line);
-            padding: 46px;
+            padding: 44px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 36px;
+            gap: 34px;
             align-items: center;
         }
 
         .desk-info h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.2rem;
-            font-weight: 500;
             color: var(--ink);
             margin-bottom: 12px;
         }
@@ -478,25 +498,24 @@
             align-items: center;
             padding: 15px 20px;
             border: 1px solid var(--line);
-            background-color: var(--ivory);
+            background-color: var(--green-tint);
             color: var(--ink);
             text-decoration: none;
             font-size: 0.84rem;
-            letter-spacing: 1px;
             transition: all 0.3s ease;
         }
 
         .direct-btn:hover {
-            border-color: var(--gold);
-            background-color: var(--sand);
+            border-color: #1b6b4d;
+            background-color: var(--green-soft);
         }
 
-        /* Luxury Footer */
+        /* Footer */
         footer {
-            background-color: var(--noir);
-            color: #d8cfc4;
-            padding: 64px 6% 28px;
-            border-top: 1px solid rgba(194, 155, 107, 0.35);
+            background-color: var(--emerald-dark);
+            color: #d6e6de;
+            padding: 62px 6% 28px;
+            border-top: 2px solid var(--gold);
         }
 
         .footer-cols {
@@ -504,33 +523,30 @@
             margin: auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 38px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 36px;
+            padding-bottom: 38px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-col h4 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--gold-soft);
+            color: var(--gold-bright);
             margin-bottom: 16px;
-            letter-spacing: 1px;
         }
 
         .footer-col p,
         .footer-col a {
             display: block;
-            color: #cfc5b9;
+            color: #c8dcd2;
             text-decoration: none;
             font-size: 0.84rem;
             font-weight: 300;
             margin-bottom: 10px;
-            transition: color 0.3s;
         }
 
         .footer-col a:hover {
-            color: var(--gold-soft);
+            color: var(--gold-bright);
         }
 
         .social-links {
@@ -542,17 +558,17 @@
         .social-links a {
             width: 38px;
             height: 38px;
-            border: 1px solid rgba(194, 155, 107, 0.45);
+            border: 1px solid rgba(231, 201, 150, 0.5);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-soft);
+            color: var(--gold-bright);
             margin-bottom: 0;
         }
 
         .social-links a:hover {
             background-color: var(--gold);
-            color: var(--noir);
+            color: var(--emerald-dark);
         }
 
         .footer-bottom {
@@ -562,20 +578,17 @@
             text-align: center;
             font-size: 0.76rem;
             letter-spacing: 1.5px;
-            color: #8f857b;
+            color: #8da99b;
             text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
             .hero-inner h1 {
-                font-size: 2.45rem;
+                font-size: 2.4rem;
             }
-            .btn-ghost {
+            .btn-green-outline {
                 margin-left: 0;
                 margin-top: 12px;
-            }
-            .hero-watermark {
-                display: none;
             }
             .desk-box {
                 padding: 28px 20px;
@@ -585,7 +598,7 @@
 </head>
 <body>
 
-    <!-- Top Strip -->
+    <!-- Top Green Bar -->
     <div class="top-strip">
         Musaq Traders &nbsp;•&nbsp; Wholesale Women's Wear &nbsp;•&nbsp; Abbas Tower, Hyderabad, Telangana
     </div>
@@ -611,23 +624,25 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Video -->
     <section class="hero">
+        <video class="bg-video" autoplay muted loop playsinline poster="IMG-20261122-WA0001.jpg">
+            <source src="YTShort_23Nov2026_17_51_18.mp4" type="video/mp4">
+        </video>
+        <div class="hero-green-overlay"></div>
+
         <div class="hero-inner">
             <div class="hero-kicker">Wholesale Collection • Abbas Tower, Hyderabad</div>
             <h1>3-Piece Suits, 2-Piece &amp; Palazzo Sets</h1>
-            <p>Dedicated wholesale women's wear for boutiques, retailers, and resellers—featuring 3-piece suits, 2-piece sets, palazzo ensembles, and kurtas from Abbas Tower, Hyderabad.</p>
+            <p>Clean emerald-green and gold presentation for wholesale women's wear—3-piece suits, 2-piece sets, palazzo ensembles, and kurtas from Hyderabad.</p>
             <div>
-                <a href="#three-piece" class="btn-editorial">Explore Collection</a>
-                <a href="https://instagram.com/musaqind" target="_blank" class="btn-ghost">Instagram @musaqind</a>
+                <a href="#three-piece" class="btn-gold">Explore Collection</a>
+                <a href="https://instagram.com/musaqind" target="_blank" class="btn-green-outline">Instagram @musaqind</a>
             </div>
-        </div>
-        <div class="hero-watermark">
-            <img src="5956-removebg-preview.png" alt="Musaq Traders Crest" onerror="this.style.display='none'">
         </div>
     </section>
 
-    <!-- Minimal Pillars -->
+    <!-- Green Highlights Bar -->
     <div class="pillars">
         <div class="pillar-box">
             <h4>3-Piece Suits</h4>
@@ -635,7 +650,7 @@
         </div>
         <div class="pillar-box">
             <h4>2-Piece Suits</h4>
-            <p>Coordinated ethnic sets in rich fabrics</p>
+            <p>Coordinated ethnic wholesale sets</p>
         </div>
         <div class="pillar-box">
             <h4>Palazzo Sets</h4>
@@ -643,7 +658,7 @@
         </div>
         <div class="pillar-box">
             <h4>Abbas Tower, Hyderabad</h4>
-            <p>Wholesale trade hub in Telangana, India</p>
+            <p>Wholesale women's wear in Telangana, India</p>
         </div>
     </div>
 
@@ -652,12 +667,12 @@
         <div class="section-header">
             <span class="eyebrow">Wholesale Catalogue</span>
             <h2>Suits, Palazzo &amp; Kurtas Edit</h2>
-            <p>Clean, refined wholesale lines designed for store owners and resellers seeking consistent quality from Hyderabad.</p>
+            <p>Clean, refined wholesale lines designed for store owners and resellers from Abbas Tower, Hyderabad.</p>
         </div>
 
         <div class="category-grid">
 
-            <!-- 1. 3-Piece Suits (Your Uploaded Photo) -->
+            <!-- 1. 3-Piece Suits -->
             <article class="category-card">
                 <div class="photo-box">
                     <img src="IMG-20261122-WA0001.jpg" alt="3-Piece Embroidered Suit Set">
@@ -676,12 +691,4 @@
             </article>
 
             <!-- 2. 2-Piece Suits -->
-            <article class="category-card" id="two-piece">
-                <div class="photo-box">
-                    <img src="IMG-20261122-WA0001.jpg" alt="2-Piece Suit Sets">
-                </div>
-                <div class="card-content">
-                    <div>
-                        <div class="cat-label">02 • 2-Piece Suits</div>
-                        <h3>Tailored 2-Piece Suit Sets</h3>
-                        <p>Versatile two-piece ensembles
+        
