@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSAQ | Shop Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f2f8f5;
+            color: #08211b;
+        }
+
+        .top-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #051c17;
+            color: #ffffff;
+            padding: 10px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .brand-box img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link-btn {
+            text-decoration: none;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 6px 13px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link-btn.ig {
+            background: #ffffff;
+            color: #051c17;
+            border-color: #ffffff;
+            font-weight: 600;
+        }
+
+        .shop-container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 26px 4% 56px;
+        }
+
+        .shop-heading {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .shop-heading h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .shop-heading p {
+            font-size: 0.85rem;
+            color: #49635c;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .item-card {
+            background: #ffffff;
+            border: 1px solid #c9ddd6;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 18px rgba(8, 33, 27, 0.05);
+        }
+
+        .item-photo {
+            width: 100%;
+            height: 310px;
+            background: #e5efe9;
+            overflow: hidden;
+        }
+
+        .item-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .item-body {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .item-cat {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #144d40;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #08211b;
+            margin-top: 2px;
+        }
+
+        .price-size-line {
+            background: #f2f8f5;
+            border: 1px solid #d5e6df;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-val {
+            font-weight: 700;
+            color: #051c17;
+        }
+
+        .size-val {
+            font-weight: 600;
+            color: #2c4740;
+        }
+
+        .ig-order-btn {
+            text-decoration: none;
+            background: #051c17;
+            color: #ffffff;
+            padding: 9px 10px;
+            border-radius: 7px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <a href="index.html" class="brand-box">
+            <img src="5956-removebg-preview.png" alt="MUSAQ Logo" onerror="this.style.display='none'">
+            <span>MUSAQ</span>
+        </a>
+
+        <div class="nav-right">
+            <a href="index.html" class="nav-link-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="https://instagram.com/musaqind" target="_blank" class="nav-link-btn ig"><i class="fab fa-instagram"></i> @musaqind</a>
+        </div>
+    </header>
+
+    <main class="shop-container">
+        <div class="shop-heading">
+            <h1>MUSAQ Ladies Wear Collection</h1>
+            <p>32 Varieties • Price &amp; Size Listed • Abbas Tower, Hyderabad</p>
+        </div>
+
+        <div class="products-grid" id="grid"></div>
+    </main>
+
+    <script>
+        const items = [
+            // 3-Piece Suits (4 varieties)
+            { cat: '3-Piece Suit', title: 'Mauve Scallop Embroidered 3-Pc', price: '₹680', size: 'XL, XXL', img: 'IMG-20261122-WA0001.jpg' },
+            { cat: '3-Piece Suit', title: 'Festive Chanderi Threadwork 3-Pc', price: '₹790', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/291738/pexels-photo-291738.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: '3-Piece Suit', title: 'Jaipuri Cotton Printed 3-Pc Set', price: '₹580', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: '3-Piece Suit', title: 'Muslin Silk Floral 3-Piece Set', price: '₹740', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // 2-Piece Suits (4 varieties)
+            { cat: '2-Piece Suit', title: 'Rayon Foil Print Kurta & Pant', price: '₹440', size: 'XL, XXL', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: '2-Piece Suit', title: 'Cotton Co-Ord Kurti Palazzo Set', price: '₹490', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: '2-Piece Suit', title: 'Pastel Chikankari 2-Piece Set', price: '₹520', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: '2-Piece Suit', title: 'Office Wear Straight 2-Pc Suit', price: '₹410', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Kurtis (4 varieties)
+            { cat: 'Ladies Kurti', title: 'Daily Wear Straight Cotton Kurti', price: '₹240', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Kurti', title: 'A-Line Rayon Embroidered Kurti', price: '₹320', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Kurti', title: 'Anarkali Flare Printed Kurti', price: '₹380', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Kurti', title: 'Naira Cut Festive Kurti', price: '₹360', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Dupattas (4 varieties)
+            { cat: 'Ladies Dupatta', title: 'Banarasi Silk Zari Border Dupatta', price: '₹190', size: '2.25m', img: 'https://images.pexels.com/photos/1082529/pexels-photo-1082529.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Dupatta', title: 'Organza Floral Cutwork Dupatta', price: '₹175', size: '2.25m', img: 'https://images.pexels.com/photos/1346187/pexels-photo-1346187.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Dupatta', title: 'Pure Cotton Bandhani Dupatta', price: '₹120', size: '2.25m', img: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Dupatta', title: 'Chiffon Phulkari Embroidered Dupatta', price: '₹150', size: '2.25m', img: 'https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Ladies Jeans (4 varieties)
+            { cat: 'Ladies Jeans', title: 'Women High-Waist Stretch Denim', price: '₹380', size: '28, 30, 32, 34, 36', img: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Jeans', title: 'Ladies Wide-Leg Baggy Fit Jeans', price: '₹420', size: '28, 30, 32, 34', img: 'https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Jeans', title: 'Women Ankle-Length Skinny Jeans', price: '₹350', size: '28, 30, 32, 34, 36', img: 'https://images.pexels.com/photos/884979/pexels-photo-884979.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies Jeans', title: 'Ladies Light-Wash Bootcut Denim', price: '₹395', size: '28, 30, 32, 34', img: 'https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Ladies T-Shirts (4 varieties)
+            { cat: 'Ladies T-Shirt', title: 'Women Oversized Cotton Graphic Tee', price: '₹195', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies T-Shirt', title: 'Ladies Solid Bio-Wash Round Tee', price: '₹160', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies T-Shirt', title: 'Women Ribbed Casual Crop Top Tee', price: '₹180', size: 'S, M, L, XL', img: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Ladies T-Shirt', title: 'Ladies Striped Cotton Relaxed Tee', price: '₹175', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Leggings (4 varieties)
+            { cat: 'Leggings', title: '4-Way Stretch Cotton Leggings', price: '₹135', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/291738/pexels-photo-291738.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Leggings', title: 'Women Ankle-Fit Lycra Leggings', price: '₹125', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Leggings', title: 'Premium Shimmer Festive Leggings', price: '₹160', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Leggings', title: 'Plus Size Comfort Churidar Legging', price: '₹145', size: 'XL, XXL, XXXL', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=700' },
+
+            // Night Suits (4 varieties)
+            { cat: 'Night Suit', title: 'Women Pure Cotton Printed Night Suit', price: '₹340', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Night Suit', title: 'Ladies Hosiery Top & Pyjama Set', price: '₹310', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Night Suit', title: 'Soft Alpine Satin Collar Nightwear', price: '₹410', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=700' },
+            { cat: 'Night Suit', title: 'Women Floral Kaftan Night Suit', price: '₹365', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=700' }
+        ];
+
+        const grid = document.getElementById('grid');
+
+        items.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            card.innerHTML = `
+                <div class="item-photo">
+                    <img src="${item.img}" alt="${item.title}" loading="lazy">
+                </div>
+                <div class="item-body">
+                    <div>
+                        <div class="item-cat">${item.cat}</div>
+                        <div class="item-title">${item.title}</div>
+                    </div>
+                    <div class="price-size-line">
+                        <span class="price-val">Price: ${item.price}</span>
+                        <span class="size-val">Size: ${item.size}</span>
+                    </div>
+                    <a href="https://instagram.com/musaqind" target="_blank" class="ig-order-btn">
+                        <i class="fab fa-instagram"></i> Order on Instagram
+                    </a>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+
+</body>
+  </html>
+  
