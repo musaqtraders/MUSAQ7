@@ -1,3 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSAQ | Shop Collection</title>
+<meta name="theme-color" content="#0b0a08">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#0b0a08;--card:#15130f;--gold:#e6c878;--text:#f7f2e7;--muted:#b3ab9a;--line:rgba(230,200,120,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(11,10,8,.96);border-bottom:1px solid var(--line);padding:10px 16px}
+.bar{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:3px;color:var(--gold)}
+.brand img{height:40px}
+.ig{border:1px solid var(--gold);color:var(--gold);padding:7px 14px;border-radius:30px;font-size:.8rem}
+.tools{max-width:1200px;margin:10px auto 0}
+#search{width:100%;padding:11px 16px;border-radius:30px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:.9rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-top:10px;scrollbar-width:none}
+.chips button{flex:none;padding:7px 15px;border-radius:30px;border:1px solid var(--line);background:none;color:var(--muted);font:inherit;font-size:.78rem;cursor:pointer}
+.chips button.on{background:var(--gold);border-color:var(--gold);color:#17120a;font-weight:600}
+main{max-width:1200px;margin:0 auto;padding:22px 14px 50px}
+h1{font-family:'Playfair Display',serif;text-align:center;font-size:1.7rem}
+.count{text-align:center;color:var(--muted);font-size:.82rem;margin:4px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.photo{aspect-ratio:3/4;background:#201c15;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card:hover img{transform:scale(1.05)}
+.body{padding:11px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cat{font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.title{font-size:.86rem;font-weight:500;line-height:1.35;flex:1}
+.price{color:var(--gold);font-size:1.15rem;font-weight:600}
+.size{font-size:.72rem;color:var(--muted)}
+.order{background:var(--gold);color:#17120a;border-radius:30px;padding:9px;text-align:center;font-size:.78rem;font-weight:600}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--text);color:#17120a;padding:10px 18px;border-radius:30px;font-size:.8rem;width:max-content;max-width:90vw;display:none;z-index:20}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a href="index.html" class="brand"><img src="5956-removebg-preview.png" alt="" onerror="this.style.display='none'">MUSAQ</a>
+    <a href="https://instagram.com/musaqind" target="_blank" rel="noopener" class="ig"><i class="fab fa-instagram"></i> @musaqind</a>
+  </div>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search kurti, jeans, cotton..." aria-label="Search products">
+    <div class="chips" id="chips"></div>
+  </div>
+</header>
+<main>
+  <h1>Ladies Wear Collection</h1>
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+</main>
+<div id="toast" role="status"></div>
+<script>
+const items = [
+  { cat: '3-Piece Suit', title: 'Mauve Scallop Embroidered 3-Pc', price: '₹680', size: 'XL, XXL', img: 'IMG-20261122-WA0001.jpg' },
+  { cat: '3-Piece Suit', title: 'Festive Chanderi Threadwork 3-Pc', price: '₹790', size: 'M, L, XL, XXL' },
+  { cat: '3-Piece Suit', title: 'Jaipuri Cotton Printed 3-Pc Set', price: '₹580', size: 'M, L, XL, XXL' },
+  { cat: '3-Piece Suit', title: 'Muslin Silk Floral 3-Piece Set', price: '₹740', size: 'L, XL, XXL' },
+  { cat: '2-Piece Suit', title: 'Rayon Foil Print Kurta & Pant', price: '₹440', size: 'XL, XXL' },
+  { cat: '2-Piece Suit', title: 'Cotton Co-Ord Kurti Palazzo Set', price: '₹490', size: 'M, L, XL, XXL' },
+  { cat: '2-Piece Suit', title: 'Pastel Chikankari 2-Piece Set', price: '₹520', size: 'L, XL, XXL' },
+  { cat: '2-Piece Suit', title: 'Office Wear Straight 2-Pc Suit', price: '₹410', size: 'M, L, XL, XXL' },
+  { cat: 'Ladies Kurti', title: 'Daily Wear Straight Cotton Kurti', price: '₹240', size: 'M, L, XL, XXL' },
+  { cat: 'Ladies Kurti', title: 'A-Line Rayon Embroidered Kurti', price: '₹320', size: 'L, XL, XXL' },
+  { cat: 'Ladies Kurti', title: 'Anarkali Flare Printed Kurti', price: '₹380', size: 'M, L, XL, XXL' },
+  { cat: 'Ladies Kurti', title: 'Naira Cut Festive Kurti', price: '₹360', size: 'L, XL, XXL' },
+  { cat: 'Ladies Dupatta', title: 'Banarasi Silk Zari Border Dupatta', price: '₹190', size: '2.25m' },
+  { cat: 'Ladies Dupatta', title: 'Organza Floral Cutwork Dupatta', price: '₹175', size: '2.25m' },
+  { cat: 'Ladies Dupatta', title: 'Pure Cotton Bandhani Dupatta', price: '₹120', size: '2.25m' },
+  { cat: 'Ladies Dupatta', title: 'Chiffon Phulkari Embroidered Dupatta', price: '₹150', size: '2.25m' },
+  { cat: 'Ladies Jeans', title: 'Women High-Waist Stretch Denim', price: '₹380', size: '28, 30, 32, 34, 36' },
+  { cat: 'Ladies Jeans', title: 'Ladies Wide-Leg Baggy Fit Jeans', price: '₹420', size: '28, 30, 32, 34' },
+  { cat: 'Ladies Jeans', title: 'Women Ankle-Length Skinny Jeans', price: '₹350', size: '28, 30, 32, 34, 36' },
+  { cat: 'Ladies Jeans', title: 'Ladies Light-Wash Bootcut Denim', price: '₹395', size: '28, 30, 32, 34' },
+  { cat: 'Ladies T-Shirt', title: 'Women Oversized Cotton Graphic Tee', price: '₹195', size: 'M, L, XL, XXL' },
+  { cat: 'Ladies T-Shirt', title: 'Ladies Solid Bio-Wash Round Tee', price: '₹160', size: 'M, L, XL, XXL' },
+  { cat: 'Ladies T-Shirt', title: 'Women Ribbed Casual Crop Top Tee', price: '₹180', size: 'S, M, L, XL' },
+  { cat: 'Ladies T-Shirt', title: 'Ladies Striped Cotton Relaxed Tee', price: '₹175', size: 'M, L, XL, XXL' },
+  { cat: 'Leggings', title: '4-Way Stretch Cotton Leggings', price: '₹135', size: 'L, XL, XXL' },
+  { cat: 'Leggings', title: 'Women Ankle-Fit Lycra Leggings', price: '₹125', size: 'M, L, XL, XXL' },
+  { cat: 'Leggings', title: 'Premium Shimmer Festive Leggings', price: '₹160', size: 'L, XL, XXL' },
+  { cat: 'Leggings', title: 'Plus Size Comfort Churidar Legging', price: '₹145', size: 'XL, XXL, XXXL' },
+  { cat: 'Night Suit', title: 'Women Pure Cotton Printed Night Suit', price: '₹340', size: 'M, L, XL, XXL' },
+  { cat: 'Night Suit', title: 'Ladies Hosiery Top & Pyjama Set', price: '₹310', size: 'L, XL, XXL' },
+  { cat: 'Night Suit', title: 'Soft Alpine Satin Collar Nightwear', price: '₹410', size: 'M, L, XL, XXL' },
+  { cat: 'Night Suit', title: 'Women Floral Kaftan Night Suit', price: '₹365', size: 'L, XL, XXL' }
+];
+
+const $ = id => document.getElementById(id);
+const cats = ['All', ...new Set(items.map(i => i.cat))];
+const wanted = new URLSearchParams(location.search).get('cat');
+let active = cats.includes(wanted) ? wanted : 'All';
+
+function render() {
+  const q = $('search').value.trim().toLowerCase();
+  const list = items.filter(i => (active === 'All' || i.cat === active) &&
+    (i.title + ' ' + i.cat).toLowerCase().includes(q));
+  $('count').textContent = list.length ? list.length + ' styles • Wholesale • Abbas Tower, Dewan Devdi, Hyderabad' : 'No products found';
+  $('grid').innerHTML = list.map(i => `
+    <div class="card">
+      <div class="photo"><img alt="${i.title}" loading="lazy"></div>
+      <div class="body">
+        <div class="cat">${i.cat}</div>
+        <div class="title">${i.title}</div>
+        <div class="price">${i.price}</div>
+        <div class="size">Size: ${i.size}</div>
+        <a class="order" data-id="${items.indexOf(i)}" href="https://ig.me/m/musaqind" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Order</a>
+      </div>
+    </div>`).join('');
+}
+
+cats.forEach(c => {
+  const b = document.createElement('button');
+  b.textContent = c;
+  if (c === active) b.className = 'on';
+  b.onclick = () => {
+    active = c;
+    [...$('chips').children].forEach(x => x.classList.toggle('on', x === b));
+    render();
+    scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  $('chips').appendChild(b);
+});
+
+$('search').addEventListener('input', render);
+
+let timer;
+$('grid').addEventListener('click', e => {
+  const a = e.target.closest('.order');
+  if (!a || !navigator.clipboard) return;
+  const i = items[a.dataset.id];
+  navigator.clipboard.writeText(`Hi MUSAQ, I want to order: ${i.title} (${i.price}). My size: `).then(() => {
+    $('toast').textContent = 'Order message copied. Paste it in Instagram chat.';
+    $('toast').style.display = 'block';
+    clearTimeout(timer);
+    timer = setTimeout(() => $('toast').style.display = 'none', 4000);
+  }).catch(() => {});
+});
+render();
+</script>
 <script>
 (() => {
   const keys = {'3-Piece Suit':'3piece','2-Piece Suit':'2piece','Ladies Kurti':'kurti','Ladies Dupatta':'dupatta','Ladies Jeans':'jeans','Ladies T-Shirt':'tshirt','Leggings':'legging','Night Suit':'night'};
@@ -29,9 +177,11 @@
     const key = keys[item.cat];
     const img = card.querySelector('img');
     img.onerror = () => { img.onerror = null; img.src = art(key, n % 4); };
-    img.src = item.img.startsWith('IMG-') ? item.img : key + (n + 1) + '.jpg';
+    img.src = item.img ? item.img : key + (n + 1) + '.jpg';
   });
   new MutationObserver(apply).observe(document.getElementById('grid'), { childList: true });
   apply();
 })();
 </script>
+</body>
+</html>
