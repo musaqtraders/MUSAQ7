@@ -1,165 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUSAQ | Shop Collection</title>
-<meta name="theme-color" content="#0b0a08">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--bg:#0b0a08;--card:#15130f;--gold:#e6c878;--text:#f7f2e7;--muted:#b3ab9a;--line:rgba(230,200,120,.22)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text)}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:10;background:rgba(11,10,8,.96);border-bottom:1px solid var(--line);padding:10px 16px}
-.bar{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.brand{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:3px;color:var(--gold)}
-.brand img{height:40px}
-.ig{border:1px solid var(--gold);color:var(--gold);padding:7px 14px;border-radius:30px;font-size:.8rem}
-.tools{max-width:1200px;margin:10px auto 0}
-#search{width:100%;padding:11px 16px;border-radius:30px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:.9rem}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-top:10px;scrollbar-width:none}
-.chips button{flex:none;padding:7px 15px;border-radius:30px;border:1px solid var(--line);background:none;color:var(--muted);font:inherit;font-size:.78rem;cursor:pointer}
-.chips button.on{background:var(--gold);border-color:var(--gold);color:#17120a;font-weight:600}
-main{max-width:1200px;margin:0 auto;padding:22px 14px 50px}
-h1{font-family:'Playfair Display',serif;text-align:center;font-size:1.7rem}
-.count{text-align:center;color:var(--muted);font-size:.82rem;margin:4px 0 20px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.photo{aspect-ratio:3/4;background:#201c15;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.card:hover img{transform:scale(1.05)}
-.body{padding:11px;display:flex;flex-direction:column;gap:6px;flex:1}
-.cat{font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
-.title{font-size:.86rem;font-weight:500;line-height:1.35;flex:1}
-.price{color:var(--gold);font-size:1.15rem;font-weight:600}
-.size{font-size:.72rem;color:var(--muted)}
-.order{background:var(--gold);color:#17120a;border-radius:30px;padding:9px;text-align:center;font-size:.78rem;font-weight:600}
-#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--text);color:#17120a;padding:10px 18px;border-radius:30px;font-size:.8rem;width:max-content;max-width:90vw;display:none;z-index:20}
-</style>
-</head>
-<body>
-<header>
-  <div class="bar">
-    <a href="index.html" class="brand"><img src="5956-removebg-preview.png" alt="" onerror="this.style.display='none'">MUSAQ</a>
-    <a href="https://instagram.com/musaqind" target="_blank" rel="noopener" class="ig"><i class="fab fa-instagram"></i> @musaqind</a>
-  </div>
-  <div class="tools">
-    <input id="search" type="search" placeholder="Search kurti, jeans, cotton..." aria-label="Search products">
-    <div class="chips" id="chips"></div>
-  </div>
-</header>
-<main>
-  <h1>Ladies Wear Collection</h1>
-  <p class="count" id="count"></p>
-  <div class="grid" id="grid"></div>
-</main>
-<div id="toast" role="status"></div>
 <script>
-const items = [
-    // 3-Piece Suits
-    { cat: '3-Piece Suit', title: 'Mauve Scallop Embroidered 3-Pc', price: '₹680', size: 'XL, XXL', img: 'IMG-20261122-WA0001.jpg' },
-    { cat: '3-Piece Suit', title: 'Festive Chanderi Threadwork 3-Pc', price: '₹790', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/291738/pexels-photo-291738.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: '3-Piece Suit', title: 'Jaipuri Cotton Printed 3-Pc Set', price: '₹580', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: '3-Piece Suit', title: 'Muslin Silk Floral 3-Piece Set', price: '₹740', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // 2-Piece Suits
-    { cat: '2-Piece Suit', title: 'Rayon Foil Print Kurta & Pant', price: '₹440', size: 'XL, XXL', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: '2-Piece Suit', title: 'Cotton Co-Ord Kurti Palazzo Set', price: '₹490', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: '2-Piece Suit', title: 'Pastel Chikankari 2-Piece Set', price: '₹520', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: '2-Piece Suit', title: 'Office Wear Straight 2-Pc Suit', price: '₹410', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Kurtis
-    { cat: 'Ladies Kurti', title: 'Daily Wear Straight Cotton Kurti', price: '₹240', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Kurti', title: 'A-Line Rayon Embroidered Kurti', price: '₹320', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Kurti', title: 'Anarkali Flare Printed Kurti', price: '₹380', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Kurti', title: 'Naira Cut Festive Kurti', price: '₹360', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Dupattas
-    { cat: 'Ladies Dupatta', title: 'Banarasi Silk Zari Border Dupatta', price: '₹190', size: '2.25m', img: 'https://images.pexels.com/photos/1082529/pexels-photo-1082529.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Dupatta', title: 'Organza Floral Cutwork Dupatta', price: '₹175', size: '2.25m', img: 'https://images.pexels.com/photos/1346187/pexels-photo-1346187.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Dupatta', title: 'Pure Cotton Bandhani Dupatta', price: '₹120', size: '2.25m', img: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Dupatta', title: 'Chiffon Phulkari Embroidered Dupatta', price: '₹150', size: '2.25m', img: 'https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Ladies Jeans
-    { cat: 'Ladies Jeans', title: 'Women High-Waist Stretch Denim', price: '₹380', size: '28, 30, 32, 34, 36', img: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Jeans', title: 'Ladies Wide-Leg Baggy Fit Jeans', price: '₹420', size: '28, 30, 32, 34', img: 'https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Jeans', title: 'Women Ankle-Length Skinny Jeans', price: '₹350', size: '28, 30, 32, 34, 36', img: 'https://images.pexels.com/photos/884979/pexels-photo-884979.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies Jeans', title: 'Ladies Light-Wash Bootcut Denim', price: '₹395', size: '28, 30, 32, 34', img: 'https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Ladies T-Shirts
-    { cat: 'Ladies T-Shirt', title: 'Women Oversized Cotton Graphic Tee', price: '₹195', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies T-Shirt', title: 'Ladies Solid Bio-Wash Round Tee', price: '₹160', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies T-Shirt', title: 'Women Ribbed Casual Crop Top Tee', price: '₹180', size: 'S, M, L, XL', img: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Ladies T-Shirt', title: 'Ladies Striped Cotton Relaxed Tee', price: '₹175', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Leggings
-    { cat: 'Leggings', title: '4-Way Stretch Cotton Leggings', price: '₹135', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/291738/pexels-photo-291738.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Leggings', title: 'Women Ankle-Fit Lycra Leggings', price: '₹125', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Leggings', title: 'Premium Shimmer Festive Leggings', price: '₹160', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Leggings', title: 'Plus Size Comfort Churidar Legging', price: '₹145', size: 'XL, XXL, XXXL', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=700' },
-
-    // Night Suits
-    { cat: 'Night Suit', title: 'Women Pure Cotton Printed Night Suit', price: '₹340', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Night Suit', title: 'Ladies Hosiery Top & Pyjama Set', price: '₹310', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Night Suit', title: 'Soft Alpine Satin Collar Nightwear', price: '₹410', size: 'M, L, XL, XXL', img: 'https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=700' },
-    { cat: 'Night Suit', title: 'Women Floral Kaftan Night Suit', price: '₹365', size: 'L, XL, XXL', img: 'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=700' }
-];
-
-const $ = id => document.getElementById(id);
-const cats = ['All', ...new Set(items.map(i => i.cat))];
-const wanted = new URLSearchParams(location.search).get('cat');
-let active = cats.includes(wanted) ? wanted : 'All';
-
-function render() {
-  const q = $('search').value.trim().toLowerCase();
-  const list = items.filter(i => (active === 'All' || i.cat === active) &&
-    (i.title + ' ' + i.cat).toLowerCase().includes(q));
-  $('count').textContent = list.length ? list.length + ' styles • Abbas Tower, Hyderabad' : 'No products found';
-  $('grid').innerHTML = list.map(i => `
-    <div class="card">
-      <div class="photo"><img src="${i.img}" alt="${i.title}" loading="lazy"></div>
-      <div class="body">
-        <div class="cat">${i.cat}</div>
-        <div class="title">${i.title}</div>
-        <div class="price">${i.price}</div>
-        <div class="size">Size: ${i.size}</div>
-        <a class="order" data-id="${items.indexOf(i)}" href="https://ig.me/m/musaqind" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Order</a>
-      </div>
-    </div>`).join('');
-}
-
-cats.forEach(c => {
-  const b = document.createElement('button');
-  b.textContent = c;
-  if (c === active) b.className = 'on';
-  b.onclick = () => {
-    active = c;
-    [...$('chips').children].forEach(x => x.classList.toggle('on', x === b));
-    render();
-    scrollTo({ top: 0, behavior: 'smooth' });
+(() => {
+  const keys = {'3-Piece Suit':'3piece','2-Piece Suit':'2piece','Ladies Kurti':'kurti','Ladies Dupatta':'dupatta','Ladies Jeans':'jeans','Ladies T-Shirt':'tshirt','Leggings':'legging','Night Suit':'night'};
+  const colors = ['#b5527a','#2f8f83','#c9772e','#6a5acd'];
+  const blues = ['#2d4f7c','#4a76a8','#1f3556','#7da0c4'];
+  const p = (d, f) => `<path d="${d}" fill="${f}" stroke="#4a3b2a" stroke-width="2" stroke-linejoin="round"/>`;
+  const kurti = c => p('M120 55Q150 80 180 55L222 75L250 175L222 185L200 125L220 285L80 285L100 125L78 185L50 175L78 75Z', c) +
+    '<path d="M150 70V175M84 270H216" stroke="#ffe9a8" stroke-width="4" stroke-dasharray="3 7" fill="none"/>';
+  const pant = (c, y, w) => p(`M110 ${y}H190L${190+w} 355H${158+w/2}L150 ${y+35}L${142-w/2} 355H${110-w}Z`, c);
+  const shapes = {
+    'kurti': c => kurti(c),
+    '2piece': c => pant('#e8dcc4', 250, 8) + kurti(c),
+    '3piece': c => pant('#e8dcc4', 250, 8) + kurti(c) + p('M180 58L214 70L120 335L78 320Z', '#f0c75e'),
+    'dupatta': c => p('M85 50Q150 80 215 50Q190 180 240 335Q150 305 60 335Q110 180 85 50Z', c) +
+      '<path d="M68 315Q150 287 232 315M95 68Q150 94 205 68" stroke="#ffe9a8" stroke-width="8" stroke-dasharray="10 5" fill="none"/>',
+    'jeans': (c, n) => pant(blues[n], 60, [4,30,-6,16][n]) + '<path d="M110 82H190M150 82V130M115 85Q120 115 142 108M185 85Q180 115 158 108" stroke="#e6b566" stroke-width="2" fill="none"/>',
+    'tshirt': c => p('M115 90Q150 125 185 90L240 115L220 170L195 158V300H105V158L80 170L60 115Z', c),
+    'legging': c => pant(c, 60, -14) + '<path d="M110 78H190" stroke="#fff" stroke-width="4" fill="none"/>',
+    'night': c => pant(c, 220, 14) + p('M120 55L150 90L180 55L225 75L245 200L215 205L200 130V240H100V130L85 205L55 200L75 75Z', c) +
+      [[120,130],[180,150],[125,200],[175,215],[120,290],[182,305]].map(d => `<circle cx="${d[0]}" cy="${d[1]}" r="5" fill="#fff"/>`).join('') +
+      [115,145,175].map(y => `<circle cx="150" cy="${y}" r="4" fill="#ffe9a8"/>`).join('')
   };
-  $('chips').appendChild(b);
-});
-
-$('search').addEventListener('input', render);
-
-let timer;
-$('grid').addEventListener('click', e => {
-  const a = e.target.closest('.order');
-  if (!a || !navigator.clipboard) return;
-  const i = items[a.dataset.id];
-  navigator.clipboard.writeText(`Hi MUSAQ, I want to order: ${i.title} (${i.price}). My size: `).then(() => {
-    $('toast').textContent = 'Order message copied. Paste it in Instagram chat.';
-    $('toast').style.display = 'block';
-    clearTimeout(timer);
-    timer = setTimeout(() => $('toast').style.display = 'none', 4000);
-  }).catch(() => {});
-});
-render();
+  const art = (key, n) => 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f4ecdf"/>${shapes[key](colors[n], n)}<text x="150" y="386" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6b5d48">Sample illustration</text></svg>`);
+  const apply = () => document.querySelectorAll('#grid .card').forEach(card => {
+    const title = card.querySelector('.title').textContent;
+    const item = items.find(i => i.title === title);
+    const n = items.filter(i => i.cat === item.cat).indexOf(item);
+    const key = keys[item.cat];
+    const img = card.querySelector('img');
+    img.onerror = () => { img.onerror = null; img.src = art(key, n % 4); };
+    img.src = item.img.startsWith('IMG-') ? item.img : key + (n + 1) + '.jpg';
+  });
+  new MutationObserver(apply).observe(document.getElementById('grid'), { childList: true });
+  apply();
+})();
 </script>
-</body>
-</html>
